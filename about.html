@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Steel Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navbar ostaje tvoj originalni stil */
+
+.shiny-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #f0a500;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.shiny-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(240,165,0,0.6);
+}
+
+/* Shine efekt */
+.shiny-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0.0), rgba(255,255,255,0.4));
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.shiny-button:hover::after {
+  left: 125%;
+  transition: all 0.7s ease-in-out;
+}
+
+.mission-vision-values > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-vision-values > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(240,165,0,0.5);
+}
+
+/* Hero sekcija */
+.hero-about {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #2a2f4a 0%, #3b4166 60%, #5c3b1c 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Grid unutar hero */
+.hero-about .about-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Tekst i slika */
+.hero-about .hero-text {
+  flex: 1 1 500px;
+}
+
+.hero-about .hero-image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.hero-about .hero-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+/* Mission-Vision-Values */
+
+
+.mission-vision-values {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Tablet i manji ekrani */
+@media (max-width: 768px) {
+    .hero-about {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .hero-about .about-grid {
+        gap: 30px;
+    }
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .shiny-button { padding: 10px 20px; font-size: 0.9rem; }
+    .mission-vision-values { gap: 25px; }
+}
+
+/* Mobilni ekrani */
+@media (max-width: 480px) {
+    .hero-about {
+        padding: 30px 15px;
+    }
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+    .shiny-button { padding: 8px 18px; font-size: 0.85rem; }
+    .mission-vision-values { gap: 20px; }
+}
+
+/* Animacije */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.hero-about .hero-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animacija prelaska */
+}
+
+/* Efekat pri hoveru */
+.hero-about .hero-image img:hover {
+  transform: scale(1.05); /* lagano povećanje */
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* jača sjena */
+}
+.mvv-block {
+  background: #454d7e; /* ista boja kao u about sekciji */
+  border-radius: 12px;
+  border: 1px solid rgba(240,165,0,0.6); /* zlatna linija */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  padding: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mvv-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* zlatni glow */
+}
+
+.mvv-block h2 {
+  color: #f0a500;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.mvv-block p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.mission-vision-values {
+  background: #252a48; /* tamno-plava / ljubičasto-plava, razlika od footera */
+  color: #fff;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: center;
+  border-radius: 16px; /* dodaje zaobljene rubove cijeloj sekciji */
+  
+
+}
+
+.mission-vision-values .mvv-block {
+  background: linear-gradient(135deg, #2c2c2c, #3b3b55);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  padding: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mission-vision-values .mvv-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* lagani zlatni glow */
+}
+
+.mission-vision-values h2 {
+  color: #f0a500; /* zlatni naglasak */
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.mission-vision-values p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Tablet ekrani */
+@media (max-width: 768px) {
+  .mission-vision-values {
+    padding: 60px 15px;
+    gap: 25px;
+  }
+  .mvv-block {
+    padding: 20px;
+  }
+  .mission-vision-values h2 {
+    font-size: 1.5rem;
+  }
+  .mission-vision-values p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobilni ekrani */
+@media (max-width: 480px) {
+  .mission-vision-values {
+    padding: 40px 10px;
+    gap: 20px;
+  }
+  .mvv-block {
+    padding: 15px;
+  }
+  .mission-vision-values h2 {
+    font-size: 1.3rem;
+  }
+  .mission-vision-values p {
+    font-size: 0.9rem;
+  }
+}
+
+body{
+    background: #252a48; /* nova boja sekcije */
+
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="/" id="navbar__logo">
+      <img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <ul class="navbar__menu">
+      <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+      <li class="navbar__item"><a href="/projects.html" class="navbar__links">Projects</a></li>
+      <li class="navbar__item"><a href="/contacts.html" class="navbar__links">Contacts</a></li>
+      <li class="navbar__item"><a href="/about.html" class="navbar__links">About</a></li>
+      <li class="navbar__item"><a href="/help.html" class="navbar__links">Help</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero About Section -->
+<section class="hero-about">
+  <div class="about-grid">
+    <!-- Text content -->
+    <div class="hero-text" style="animation: fadeInUp 1s ease;">
+      <h1 style="font-size: 3rem; margin-bottom: 20px; color: #f0a500; font-weight: bold;">About Us</h1>
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+        <strong>Steel Art</strong> je moderna fabrika specijalizovana za 
+        <span style="color:#f0a500;">obradu i preradu lima</span>. Naš tim kombinuje 
+        dugogodišnje iskustvo sa najnovijim tehnologijama kako bismo pružili vrhunski kvalitet.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        Fokusirani smo na <strong>inovacije</strong>, <strong>preciznost</strong> i 
+        <strong>zadovoljstvo klijenata</strong>. Naša misija je stvaranje dugoročnih 
+        partnerstava kroz pouzdanost i kvalitet.
+      </p>
+      <a href="/projects.html" class="shiny-button">Pogledaj projekte</a>
+    </div>
+
+    <!-- Image -->
+    <div class="hero-image" style="animation: fadeIn 1.2s ease;">
+      <img src="images/logo_crni.jpg" alt="Steel Art Factory">
+    </div>
+  </div>
+</section>
+
+<!-- Mission-Vision-Values Section -->
+<section class="mission-vision-values">
+  <div class="mvv-block">
+    <h2>Naša Misija</h2>
+    <p>Pružiti inovativna i kvalitetna rešenja u oblasti obrade lima, prilagođena potrebama naših klijenata.</p>
+  </div>
+
+  <div class="mvv-block">
+    <h2>Naša Vizija</h2>
+    <p>Postati lider u industriji prerade lima na regionalnom i evropskom tržištu, kroz inovacije i kvalitet.</p>
+  </div>
+
+  <div class="mvv-block">
+    <h2>Naše Vrijednosti</h2>
+    <p>Kvalitet, povjerenje, pouzdanost i dugoročna partnerstva su temelj našeg rada.</p>
+  </div>
+</section>
+
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Steel Art</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero + FAQ u jednoj sekciji */
+        .help-hero {
+            background: linear-gradient(135deg, #1e223d, #3b3f5c);
+            color: #fff;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px 20px; /* više prostora za FAQ */
+        }
+
+        .help-hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(to top, #c96f4a, #e3a376);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .help-hero p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 50px; /* razmak između teksta i FAQ-a */
+        }
+
+        /* FAQ Section unutar hero */
+        .faq-section {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .faq-card {
+            background: #454d7e; /* ista boja kao u about sekciji */
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5),
+                        0 0 20px rgba(240,165,0,0.3); /* zlatni akcent */
+        }
+
+        .faq-card h3 {
+            color: #f0a500;
+            margin-bottom: 15px;
+        }
+
+        .faq-card p {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .help-hero h1 { font-size: 3rem; }
+            .help-hero p { font-size: 1.2rem; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .help-hero h1 { font-size: 2.2rem; }
+            .help-hero p { font-size: 1rem; }
+            .faq-section { gap: 20px; padding: 0 10px; }
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1f36, #2a2f4a);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="/projects.html" class="navbar__links">Projects</a></li>
+                <li class="navbar__item"><a href="/contacts.html" class="navbar__links">Contacts</a></li>
+                <li class="navbar__item"><a href="/about.html" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="/help.html" class="navbar__links">Help</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero + FAQ Section -->
+    <section class="help-hero">
+        <div>
+            <h1>Help & FAQ</h1>
+            <p>Ovdje možete pronaći odgovore na najčešća pitanja i korisna uputstva za Steel Art.</p>
+        </div>
+
+        <!-- FAQ Cards -->
+        <!-- FAQ Cards -->
+<section class="faq-section">
+    <div class="faq-card">
+        <h3>Kako da kontaktiram Steel Art?</h3>
+        <p>Možete nas kontaktirati putem forme na <a href="/contacts.html" style="color:#f0a500;">Contacts</a> stranici ili direktno na naš email info@steelart.com.</p>
+    </div>
+    <div class="faq-card">
+        <h3>Koje usluge Steel Art pruža?</h3>
+        <p>Naša firma se bavi obradom i preradom lima, uključujući sečenje, savijanje, zavarivanje i završnu obradu proizvoda po specifikaciji klijenta.</p>
+    </div>
+    <div class="faq-card">
+        <h3>Gdje se nalazi Steel Art?</h3>
+        <p>Naša adresa je u centru grada, a detaljne informacije o lokaciji možete pronaći na <a href="/contacts.html" style="color:#f0a500;">Contacts</a> stranici.</p>
+    </div>
+    <div class="faq-card">
+        <h3>Kako mogu pratiti projekte?</h3>
+        <p>Sve naše projekte možete pratiti na stranici <a href="/projects.html" style="color:#f0a500;">Projects</a> gdje objavljujemo najnovije realizacije i primjere rada.</p>
+    </div>
+    <!-- Dodatna FAQ pitanja -->
+    <div class="faq-card">
+        <h3>Koji su radni sati Steel Art?</h3>
+        <p>Naši radni sati su od ponedjeljka do petka, 08:00 – 17:00, a subotom po dogovoru.</p>
+    </div>
+    <div class="faq-card">
+        <h3>Postoji li mogućnost dostave?</h3>
+        <p>Da, nudimo opciju dostave proizvoda direktno do klijenta. Detalje možete dobiti kontaktiranjem našeg tima.</p>
+    </div>
+</section>
+
+    </section>
+
+    <footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+
+    <script src="app.js"></script>
+</body>
+</html>

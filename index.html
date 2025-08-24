@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Art</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <a href="/" id="navbar__logo"><img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art</a>
+            <div class="navbar__toggle" id="mobile-menu">
+
+                
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/projects.html" class="navbar__links">
+                        Projects
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/products.html" class="navbar__links">
+                        Products
+                    </a>
+                </li>
+
+
+                <li class="navbar__item">
+                    <a href="/contacts.html" class="navbar__links">
+                        Contacts
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/about.html" class="navbar__links">
+                        About
+                    </a>
+                </li>
+
+
+                <li class="navbar__item">
+                    <a href="/help.html" class="navbar__links">
+                        Help
+                    </a>
+                </li>
+            </ul>
+
+
+            
+        </div>
+    </nav>
+
+
+    <!--Hero section-->
+
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Steel Art</h1>
+                <p>Proizvodnja krovnih i zidnih profila od pocinčanog lima procesnog hladnog valjanja. Uslužno savijanje i rasijecanje lima na mjeru.</p>            
+            </div>
+            <div class="main_img--container">
+                <img width="1000px" height="600px" src="images/steel art 1p.png" alt="main_img">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Service Section -->
+     <div class="services">
+        <h1></h1>
+     </div>
+
+
+     <!-- Small Footer with Hover Effect -->
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+<script src="app.js"></script>
+</body>
+</html>

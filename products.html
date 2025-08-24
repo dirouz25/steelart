@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steel Art - Products</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
+    color: #f0f0f0;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 2.8rem;
+    color: #f0a500;
+    letter-spacing: 2px;
+}
+
+/* Products description */
+.products-description {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+}
+
+/* Products grid */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.product-card {
+    position: relative;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(240,165,0,0.5);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.modal.show {
+    display: flex;
+}
+.modal-content {
+    max-width: 80%;
+    max-height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* Tekst box ispod slike */
+.modal-description {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    background: rgba(40,40,40,0.95);
+    border: 2px solid #f0a500;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.close:hover {
+    color: #ff4d4d;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 2rem;
+    }
+    .products-description {
+        font-size: 1rem;
+    }
+    .modal-description {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+    }
+    .products-description {
+        font-size: 0.95rem;
+    }
+    .modal-description {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}
+
+/* Footer styling */
+.footer {
+    background: #222;
+    color: #f0f0f0;
+    padding: 50px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+    flex: 1 1 220px;
+}
+
+.footer h3, .footer h4 {
+    color: #f0a500;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f0a500;
+}
+
+.footer-social .social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-about, .footer-links, .footer-contact, .footer-social {
+        flex: unset;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-social .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+.social-icon {
+    color: #f0f0f0;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f0a500;
+    transform: scale(1.3);
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="/" id="navbar__logo"><img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art</a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+            <li class="navbar__item"><a href="/projects.html" class="navbar__links">Projects</a></li>
+            <li class="navbar__item"><a href="/products.html" class="navbar__links">Products</a></li>
+            <li class="navbar__item"><a href="/contacts.html" class="navbar__links">Contacts</a></li>
+            <li class="navbar__item"><a href="/about.html" class="navbar__links">About</a></li>
+            <li class="navbar__item"><a href="/help.html" class="navbar__links">Help</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<h1>Our Products</h1>
+
+<!-- Products description -->
+<div class="products-description">
+    <p>Proizvodi se od hladnog lima i koristi se za oblaganje zidova i krovova kao fasadni profil, dok može služiti i kao profil za zatvoreni tip ograde. Usporedno sa drvenom poluoblicom, lmenu poluoblicu nije potrebno održavati, dimenzije se izrađuju precizno po porudžbi čime se smanjuje otpad i pojednostavljuje montaža. Skriveni spoj omogućava gotovo nevidljiv sastav dvije ploče, a za potpuno rustikalan i originalan izgled u ponudi imamo osim standardnih boja i imitaciju drveta – zlatni hrast i tamni hrast.</p>
+</div>
+
+<!-- Products grid -->
+<section class="products-container">
+    <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica se proizvodi iz lima debljine 0.45mm - 0.60mm i prekrivena je nanosom cinka (Z140-Z275) sa završnim slojem boje na bazi polyestera u debljini od 25 mikrona pa na više.')">
+        <img src="images/limena_daska.jpg" alt="Panel 1" class="product-image">
+    </div>
+
+    <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena ravna daska lamba se proizvodi iz lima debljine 0.45mm - 0.60mm i prekrivena je nanosom cinka (Z140-Z275) sa završnim slojem boje na bazi polyestera u debljini od 25 mikrona pa na više.')">
+        <img src="images/limena_daska2.jpg" alt="Panel 2" class="product-image">
+    </div>
+
+    <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Limeni trapez (T18) se proizvodi iz lima debljine 0.45mm - 0.55mm i prekrivena je nanosom cinka (Z140-Z275) sa završnim slojem boje na bazi polyestera u debljini od 25 mikrona pa na više.')">
+        <img src="images/trapezniT18.jpg" alt="Panel 3" class="product-image">
+    </div>
+
+    <!-- Novi proizvod sa istim tekstom kao prva poluoblica -->
+    <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Limena ravna daska se proizvodi iz lima debljine 0.45mm - 0.60mm i prekrivena je nanosom cinka (Z140-Z275) sa završnim slojem boje na bazi polyestera u debljini od 25 mikrona pa na više.')">
+        <img src="images/ravnadaska (1).jpeg" alt="Panel 4" class="product-image">
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-description" id="modalText"></div>
+</div>
+
+<!-- Small Footer with Hover Effect -->
+<footer style="    background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+<script src="app.js"></script>
+</body>
+</html>

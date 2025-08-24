@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacts - Steel Art</title>
+<link rel="stylesheet" href="style.css">
+<!-- Font Awesome za ikone -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
+    color: #ddd;
+}
+
+/* Main section */
+.main{
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
+    
+}
+
+.main__container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 2rem;
+}
+
+.main__container h1{
+    font-size: 3rem;
+    color: #c96f4a;
+    margin-bottom: 1rem;
+}
+
+.main__container p{
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+/* Contact info box */
+.contact-info {
+    background: linear-gradient(
+        135deg,
+        rgba(30, 35, 60, 0.9) 0%,     /* tamno plavi ton */
+        rgba(92, 59, 28, 0.85) 100%   /* bakarni naglasak */
+    );
+    border: 2px solid #f0a500;         /* zlatno-bakarni naglasak */
+    border-radius: 18px;
+    padding: 2.5rem 3rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+    box-shadow: 0 8px 35px rgba(240, 165, 0, 0.5), 0 4px 20px rgba(0,0,0,0.4); /* glow efekt */
+    backdrop-filter: blur(10px);        /* lagani glass efekt */
+    transition: all 0.4s ease;
+    color: #c96f4a; /* BOJA TEKSTA */
+
+}
+
+.contact-info:hover {
+    box-shadow: 0 12px 45px rgba(240, 165, 0, 0.7), 0 6px 25px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
+}
+
+
+.contact-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c96f4a; /* Naslovi u box-u */
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.contact-info h3 i {
+    margin-right: 10px;
+    color: #e3a376;
+}
+
+.contact-info a,
+.contact-info .address {
+    color: #c96f4a; /* Tekst i linkovi */
+}
+
+.contact-info a:hover {
+    color: #ffd65c; /* Hover efekt za linkove */
+}
+
+/* Map container */
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px){
+    .contact-info{
+        padding: 1.5rem 2rem;
+    }
+    .main__container h1{
+        font-size: 2.5rem;
+    }
+    .main__container p{
+        font-size: 1.2rem;
+    }
+    .map-container{
+        height: 300px;
+    }
+        .main {
+        height: 90vh; /* povećaj visinu za tablete/male ekrane */
+        background-position: center top;
+        }
+    
+}
+    
+
+
+@media screen and (max-width: 480px){
+    .contact-info{
+        padding: 1rem 1.5rem;
+    }
+    .main__container h1{
+        font-size: 2rem;
+    }
+    .main__container p{
+        font-size: 1rem;
+    }
+    .map-container{
+        height: 250px;
+    }
+        .main {
+        height: 100vh; /* zauzima cijeli ekran na telefonima */
+        background-position: top;
+    }
+}
+.contact-info a {
+  display: inline-block;
+  color: #f0a500;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ffd65c;
+  border-bottom: 1px solid #ffd65c;
+}
+
+/* Adresa */
+.contact-info .address {
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+        <div class="navbar__container">
+
+            <a href="/" id="navbar__logo"><img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art</a>
+            <div class="navbar__toggle" id="mobile-menu">
+
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/projects.html" class="navbar__links">
+                        Projects
+                    </a>
+                </li>
+
+
+                <li class="navbar__item">
+                    <a href="/contacts.html" class="navbar__links">
+                        Contacts
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/about.html" class="navbar__links">
+                        About
+                    </a>
+                </li>
+
+
+                <li class="navbar__item">
+                    <a href="/help.html" class="navbar__links">
+                        Help
+                    </a>
+                </li>
+            </ul>
+
+
+            
+        </div>
+    </nav>
+<!-- Main -->
+<div class="main">
+    <div class="main__container">
+        <h1>Contact Us</h1>
+        <p>Get in touch with Steel Art</p>
+
+        <div class="contact-info">
+            <div>
+        <h3><i class="fas fa-map-marker-alt"></i>  Adresa</h3>
+        <p style="  color: #f0a500;" class="address">Ulica Industrijska 12, Podgorica, Crna Gora</p>
+                </div>
+        <div>
+    <h3><i class="fas fa-phone-alt"></i> Telefon</h3>
+    <a href="tel:+38269123456">+382 69 123 456</a>
+</div>
+<div>
+    <h3> <i class="fas fa-envelope"></i> Email</h3>
+    <a href="mailto:info@steelart.me">info@steelart.me</a>
+</div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.023456789!2d19.260000!3d42.441234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c6b123456789%3A0xabcdef123456789!2sUlica%20vojvode%20Miajla%20Nisina%2030%2C%20Podgorica!5e0!3m2!1sen!2sme!4v1692280000000!5m2!1sen!2sme" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+p{
+    font-weight: 1000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif, bold;
+  font-weight: 2000;
+  font-size: larger;
+  letter-spacing: 0.8px;
+}
+.navbar{
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradijent */
+    background-size: 200% 200%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-weight: 820;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+}
+
+#navbar__logo{
+    background-image: linear-gradient(to top, #ff0844 0% #ffb199 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.fa-gem {
+    margin-right: 0.5rem;
+}
+
+.navbar__menu{
+
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+
+}
+
+.navbar__item{
+
+height: 80px;
+
+}
+
+.navbar__links{
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__links:hover {
+    color: #f0a500;
+    text-shadow: 0 0 8px rgba(240,165,0,0.5);
+}
+
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index:1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu{
+         display: grid;    
+        grid-template-columns: auto;
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+        top:-1000px;
+        opacity: 0;
+        height: 70vh;
+        z-index: -1;
+        transition: all 1s ease;
+        }
+
+    .navbar__menu.active{
+        background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradijent */
+        top: 80px;
+        font-size: 1.3  rem;
+        height: 90vh;
+        opacity: 1;
+        z-index: 999;    
+        transition: all 0.6s ease-in-out;
+        overflow: auto; /* ovo omogućava skrol ako se meni ne uklopi */
+
+        }    
+    #navbar__logo{
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+
+    .navbar__item{
+        width: 100%;
+
+    }
+
+    .navbar__links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table; 
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%,20%);
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: rotate(46deg) translateY(12px);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: rotate(-47deg) translateY(-12px);
+    }
+}
+
+/*hero section CsS*/
+
+.main{
+
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
+
+}
+
+
+
+.main__container {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0 auto;
+    height: 90vh;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+
+    background: linear-gradient(135deg, #2a2f4a 0%, #3b4166 60%, #5c3b1c 100%); /* hladnije tonove + bakarni naglasak */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+
+
+.main__content h1{
+    font-size: 5rem;
+    background-color: #ff8177;
+    background-size: 100%;
+    background: linear-gradient(to top, #f0a500, #c96f4a); /* zlatno-bakarni naglasak */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    
+}
+
+.main_img--container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 12px 12px 0;
+}
+
+.main_img--container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* mekši rubovi */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35), 0 0 15px rgba(240,165,0,0.15); /* blagi glow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer; /* pokazuje da reaguje na hover */
+}
+.main_img--container img {
+    width: 100%;
+    height: auto;
+    border-radius: inherit; /* slika nasljeđuje zaobljene rubove */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.main_img--container:hover img {
+    transform: scale(1.04); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 25px rgba(240,165,0,0.3);
+}
+
+
+.main__content h1 {
+    font-size: 5rem;
+    background: linear-gradient(to top, #c96f4a, #e3a376);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main__content p {
+    color: #ddd;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+
+#navbar__logo img {
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.5));
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
+
+}
+#navbar__logo img:hover {
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.7));
+    transform: scale(1.05);
+
+}
+
+/*Mobile responsive*/
+
+@media screen and (max-width: 768px) {
+
+.main__container{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.main__content{
+
+text-align: center;
+margin-bottom: 4rem;
+}
+
+.main__content h1{
+font-size: 2.5rem;
+margin-top: 2rem;   
+}
+
+.main__content p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+
+}
+
+@media screen and (max-width:  480px){
+
+
+.main__container{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+}
+
+.main__content{
+
+text-align: center;
+margin-bottom: 4rem;
+}
+
+.main__content h1{
+font-size: 2rem;
+margin-top: 3rem;   
+}
+
+.main__content p{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    
+}    
+
+}
+
+}
+
+.main__slider-container {
+  max-width: 1300px;
+  margin: 4rem auto;
+  padding: 0 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b3b3b 0%, #4a4a4a 40%, #5c4639 100%);
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer; /* pokazuje da je klikabilno */
+  border-radius: 12px;
+}
+
+/* dugmici, dots itd... ostaju isti */
+
+
+#lightbox {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox.show {
+  display: flex;
+  opacity: 1;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.7);
+  transition: transform 0.3s ease;
+}
+
+#lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
+}
+
+/* Footer styling */
+.footer {
+background: #1f2540;
+color: #f0f0f0;
+    padding: 50px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+    flex: 1 1 220px;
+}
+
+.footer h3, .footer h4 {
+    color: #f0a500;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f0a500;
+}
+
+.footer-social .social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #f0a500; /* zlatni hover */
+    transform: scale(1.2);
+}
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-about, .footer-links, .footer-contact, .footer-social {
+        flex: unset;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-social .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+.social-icon {
+    color: #f0f0f0;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f0a500;
+    transform: scale(1.3);
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekti - Steel Art</title>
+<link rel="stylesheet" href="style.css">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1f36, #2a2f4a);
+  color: #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #c96f4a;
+  margin: 3rem 0;
+}
+
+/* Main hero section */
+.main {
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a);
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 1300px;
+    padding: 0 50px;
+    background: linear-gradient(135deg, #2a2f4a 0%, #3b4166 60%, #5c3b1c 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    overflow: hidden;
+    
+}
+
+.main__content h1{
+    font-size: 5rem;
+    background: linear-gradient(to top, #f0a500, #c96f4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main__content p {
+    color: #ddd;
+    margin-top: 1rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+/* Slider */
+.slider-container {
+  width: 100%;  
+  border: 2px solid rgba(108, 97, 97, 0.7);
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  background: linear-gradient(120deg, rgba(34,34,34,0.7), rgba(120,120,120,0.3));
+}
+
+.slider {
+  position: relative;
+  height: 600px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  user-select: none;
+  z-index: 10;
+}
+
+.next { right: 20px; }
+.prev { left: 20px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.35);
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  z-index: 10;
+}
+
+.dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .slider { height: 300px; }
+  .slide img { height: 300px; }
+}
+
+@media screen and (max-width: 480px) {
+  .slider { height: 200px; }
+  .slide img { height: 200px; }
+}
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#lightbox.show { display: flex; }
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.7);
+  transition: transform 0.3s ease;
+}
+
+#lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10001;
+}
+
+/* Footer styling */
+.footer {
+    background: #1f2540;
+    color: #f0f0f0;
+    padding: 50px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="/" id="navbar__logo"><img src="images/steel art logo 2-01.png" width="190px" height="160px" alt=""> Steel Art</a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+      <li class="navbar__item"><a href="/projects.html" class="navbar__links">Projects</a></li>
+      <li class="navbar__item"><a href="/products.html" class="navbar__links">Products</a></li>
+      <li class="navbar__item"><a href="/contacts.html" class="navbar__links">Contacts</a></li>
+      <li class="navbar__item"><a href="/about.html" class="navbar__links">About</a></li>
+      <li class="navbar__item"><a href="/help.html" class="navbar__links">Help</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="main__container">
+    <div class="main__content">
+      <h1>Steel Art</h1>
+      <p>Ovo su neki od naših radova</p>
+
+      <!-- Slider -->
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide active"><img src="images/projekat4.jpg" alt="Projekat 1"></div>
+          <div class="slide"><img src="images/projekat1.jpg" alt="Projekat 2"></div>
+          <div class="slide"><img src="images/projekat2.jpg" alt="Projekat 3"></div>
+          <div class="slide"><img src="images/projekat3jpg.jpg" alt="Projekat 4"></div>
+          <div class="slide"><img src="images/paneli5.jpg" alt="Projekat 5"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Povećana slika">
+</div>
+
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+    <p>&copy; 2022 Steel Art. All rights reserved.</p>
+    <div style="margin:10px 0; font-size:24px;">
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+
+<script>
+// Slider
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let currentIndex = 0;
+
+function showSlide(index) {
+  if(index < 0) index = slides.length - 1;
+  if(index >= slides.length) index = 0;
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+
+  currentIndex = index;
+}
+
+// Buttons
+document.querySelector('.prev').addEventListener('click', () => showSlide(currentIndex - 1));
+document.querySelector('.next').addEventListener('click', () => showSlide(currentIndex + 1));
+
+// Dots
+dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+
+// Auto slide
+let slideInterval = setInterval(() => showSlide(currentIndex + 1), 5000);
+const sliderContainer = document.querySelector('.slider-container');
+sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+sliderContainer.addEventListener('mouseleave', () => {
+  slideInterval = setInterval(() => showSlide(currentIndex + 1), 5000);
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+slides.forEach(slide => {
+  const img = slide.querySelector('img');
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('show');
+  });
+});
+
+lightboxClose.addEventListener('click', () => lightbox.classList.remove('show'));
+lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.classList.remove('show'); });
+document.addEventListener('keydown', e => { if(e.key === "Escape") lightbox.classList.remove('show'); });
+</script>
+<script src="app.js"></script>
+</body>
+</html>
