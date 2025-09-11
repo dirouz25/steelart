@@ -70,6 +70,7 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 10px;
 }
 
 /* Modal */
@@ -342,7 +343,7 @@ h1.animate-in {
 }
 
 .products-container.single {
-    max-width: 400px; /* širina 3 kartice */
+    max-width: 410px; /* širina 3 kartice */
     margin: 0 auto;
 }
 </style>
@@ -352,7 +353,7 @@ h1.animate-in {
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="./index.html" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt=""></a>
+        <a href="/" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt=""></a>
         <div class="navbar__toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -374,7 +375,12 @@ h1.animate-in {
 
 <!-- Products description -->
 <div class="products-description">
-    <p>Proizvodi se od hladnog lima i koristi se za oblaganje zidova i krovova kao fasadni profil, dok može služiti i kao profil za zatvoreni tip ograde. Usporedno sa drvenom poluoblicom, lmenu poluoblicu nije potrebno održavati, dimenzije se izrađuju precizno po porudžbi čime se smanjuje otpad i pojednostavljuje montaža. Skriveni spoj omogućava gotovo nevidljiv sastav dvije ploče, a za potpuno rustikalan i originalan izgled u ponudi imamo osim standardnih boja i imitaciju drveta – zlatni hrast i tamni hrast.</p>
+    <p> Proizvodi se od hladnog lima i koristi se za oblaganje zidova i krovova kao fasadni 
+        profil, dok može služiti i kao profil za zatvoreni tip ograde. Usporedno sa drvenom 
+        poluoblicom, lmenu poluoblicu nije potrebno održavati, dimenzije se izrađuju precizno 
+        po porudžbi čime se smanjuje otpad i pojednostavljuje montaža. Skriveni spoj omogućava
+        gotovo nevidljiv sastav dvije ploče, a za potpuno rustikalan i originalan izgled u 
+        ponudi imamo osim standardnih boja i imitaciju drveta – zlatni hrast i tamni hrast.</p>
 </div>
 
 <!-- Products grid -->
@@ -406,6 +412,16 @@ h1.animate-in {
     </div>
 </section>
 
+<!-- Metalne Konstrukcije -->
+<section class="products-section">
+    <h2>Metalne Konstrukcije</h2>
+    <div class="products-container single">
+        <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Trapezni T18 - krovni profil, debljina 0.45-0.55mm')">
+            <img src="images/metalna_konstrukcija.jpg" alt="Krovni 2" class="product-image">
+        </div>
+    </div>
+</section>
+
 <!-- Modal -->
 <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -430,15 +446,19 @@ h1.animate-in {
             <i class="fab fa-twitter"></i>
         </a>
     </div>
-    <p>Email: info@steelart.com | Phone: +382 12 345 678</p>
+    <p>Email: steelartmne@gmail.com | Phone: +382 67 860 064</p>
 </footer>
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <script>
-// Nakon što se stranica učita
 window.addEventListener('load', () => {
+    // Animacija headera i opisa
+    document.querySelector('h1').classList.add('animate-in');
+    document.querySelector('.products-description').classList.add('animate-in');
+
+    // Animacija proizvoda
     const products = document.querySelectorAll('.product-card');
     products.forEach((product, index) => {
         setTimeout(() => {
@@ -447,6 +467,7 @@ window.addEventListener('load', () => {
     });
 });
 
+// Modal funkcionalnost ostaje isto
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
 const modalText = document.getElementById("modalText");
@@ -466,6 +487,7 @@ modal.addEventListener("click", function(event) {
         closeModal();
     }
 });
+
 </script>
 <script src="app.js"></script>
 </body>
