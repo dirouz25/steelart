@@ -22,6 +22,8 @@
 body{
     font-family: 'Montserrat', sans-serif;
     height: 100%;
+    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
+
 }
 
 p{
@@ -46,6 +48,20 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     z-index: 999;
     font-weight: 820;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25); /* blagi shadow za odvajanje */
+    border-radius: 0 0 20px 20px; /* blago zakrivljeni donji uglovi */
+
+
+}
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #f0a500, #c96f4a);
+    opacity: 0.8;
 }
 
 .navbar__container{
@@ -467,8 +483,14 @@ margin-top: 3rem;
 
 /* Footer styling */
 .footer {
+        backdrop-filter: blur(8px);
+    background-color: rgba(31, 37, 64, 0.8); /* poluprozirni tamni ton */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; /* blago zakrivljeni gornji uglovi */
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+    padding: 50px 20px 20px 20px;
 background: #1f2540;
-color: #f0f0f0;
+color: #f0a500;
     padding: 50px 20px 20px 20px;
     font-family: Arial, sans-serif;
 }
