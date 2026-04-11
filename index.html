@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <meta property="og:description" content="Proizvodnja krovnih i zidnih profila od pocinčanog lima procesnog hladnog valjanja.">
     <meta property="og:image" content="https://steel-art.me/images/logo%20finalni.png">
     <meta property="og:url" content="https://steel-art.me">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="website"> 
 </head>
 <body>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -89,16 +89,71 @@
                 <p>Proizvodnja krovnih i zidnih profila od pocinčanog lima procesnog hladnog valjanja. Uslužno savijanje i rasijecanje lima na mjeru.</p>            
             </div>
             <div class="main_img--container">
-                <img src="images/steel art 1p.png" alt="main_img">
+                <img src="images/steel art 1p.png" alt="Proizvodnja limenih profila i obrada metala Steel Art Crna Gora">
             </div>
         </div>
     </div>
 
 
     <!-- Service Section -->
-     <div class="services">
-        <h1></h1>
-     </div>
+<div class="services">
+    <h1 class="services__title">Naše Usluge</h1> <div class="services__wrapper">
+        <div class="services__card animate-in">
+            <h2>Proizvodnja profila</h2>
+            <p>Izrađujemo krovne i fasadne profile od najkvalitetnijeg pocinčanog lima.</p>
+            <a href="products" class="services__btn">Proizvodi</a>
+        </div>
+        
+        <div class="services__card animate-in">
+            <h2>Savijanje i sječenje</h2>
+            <p>Uslužno savijanje i rasijecanje lima na savremenim mašinama po mjeri.</p>
+            <a href="contacts" class="services__btn">Upit</a>
+        </div>
+
+        <div class="services__card animate-in">
+            <h2>Dostava</h2>
+            <p>Dostava direktno na gradilište širom Crne Gore uz garanciju kvaliteta.</p>
+            <a href="about" class="services__btn">Detaljnije</a>
+        </div>
+    </div>
+</div>
+
+<div class="slider-container">
+    <h1 class="services__title">Naši Proizvodi</h1>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active">
+                <img src="images/steel art 1p.png" alt="Trapezni lim T18">
+                
+            </div>
+            <div class="slide">
+                <img src="images/slike_projekta_15.jpg" alt="Limena lamperija">
+                
+                <!-- //<div class="slide-caption">Limena lamperija (ravna daska)</div>*/
+ -->
+                
+            </div>
+            <div class="slide">
+                <img src="images/slike_projekta_16.jpg" alt="Uslužno savijanje">
+                
+            </div>
+
+            <div class="slide">
+                <img src="images/projekat1.jpg" alt="Uslužno savijanje">
+                
+            </div>
+
+             <div class="slide">
+                <img src="images/projekat3jpg.jpg" alt="Uslužno savijanje">
+                
+            </div>
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</div>
+
   
 
      <!-- Small Footer with Hover Effect -->
@@ -123,7 +178,17 @@
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<div class="contact-web-fix">
+    <a href="https://wa.me/38267860064" class="contact-icon whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="viber://chat?number=%2B38267860064" class="contact-icon viber">
+        <i class="fab fa-viber"></i>
+    </a>
+    <div class="contact-main-btn">
+        <i class="fas fa-comments"></i>
+    </div>
+</div>
 <script>
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");

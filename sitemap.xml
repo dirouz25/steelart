@@ -3,34 +3,31 @@
 
   <url>
     <loc>https://steel-art.me/</loc>
+    <lastmod>2026-04-11</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://steel-art.me/projects</loc>
+    <lastmod>2026-04-11</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://steel-art.me/products</loc>
-    <priority>0.8</priority>
-  </url>
+    <lastmod>2026-04-11</lastmod>
+    <priority>0.9</priority> </url>
 
   <url>
     <loc>https://steel-art.me/contacts</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-04-11</lastmod>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://steel-art.me/about</loc>
+    <lastmod>2026-04-11</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://steel-art.me/help</loc>
-    <priority>0.5</priority>
-  </url>
-
 </urlset>
-
-

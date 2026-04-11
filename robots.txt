@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /images/  
+Disallow: /css/
+Disallow: /js/
+
+
+Crawl-delay: 10
 
 Sitemap: https://steel-art.me/sitemap.xml

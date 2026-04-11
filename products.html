@@ -1,365 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-<meta charset="UTF-8">
-<link rel="canonical" href="https://steel-art.me/products" />
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://steel-art.me/products" />
+    <meta name="description" content="Vršimo prodaju i obradu hladnog lima: fasadni i krovni profili, limena daska, trapezni T18 i metalne konstrukcije po narudžbi. Steel Art - Kvalitet i preciznost.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proizvodi od čelika i lima | Steel Art</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1f36, #121629);
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steel Art - Products</title>
-<link rel="stylesheet" href="style.css">
-<style>
-    html,body{
-        width: 100%;
-        overflow-x: hidden;
-    }
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
-    color: #f0f0f0;
-    width: 100%;
-    overflow-x: hidden;
-}
+        /* Header */
+        h1 {
+            text-align: center;
+            padding: 60px 20px 20px;
+            font-size: 2.5rem;
+            color: #f0a500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-/* Header */
-h1 {
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 2.8rem;
-    color: #f0a500;
-    letter-spacing: 2px;
-}
+        .products-description {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
 
-/* Products description */
-.products-description {
-    max-width: 1000px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #f0f0f0;
-}
+        /* Products Section & Grid */
+        .products-section {
+            padding: 40px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Products grid */
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto 50px auto;
-    width: 100%;
-    box-sizing: border-box;
-}
+        .products-section h2 {
+            text-align: center;
+            color: #f0a500;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
-.product-card {
-    position: relative;
-    background: #222;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(240,165,0,0.5);
-}
+        .products-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #f0a500;
+        }
 
-.product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-}
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
 
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(4px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-}
-.modal.show {
-    display: flex;
-}
-.modal-content {
-    max-width: 80%;
-    max-height: 60%;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
+        /* Unapređene Kartice (Sređena veličina slika) */
+        .product-card {
+            background: #1f2540;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(240, 165, 0, 0.15);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            opacity: 0; /* Za animaciju */
+            transform: translateY(30px);
+        }
 
-/* Tekst box ispod slike */
-.modal-description {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #f0f0f0;
-    background: rgba(40,40,40,0.95);
-    border: 2px solid #f0a500;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 80%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #f0a500;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
 
-/* Close button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 30px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-.close:hover {
-    color: #ff4d4d;
-}
+        .product-image {
+            width: 100%;
+            height: 300px; /* Limitirana visina da ne budu ogromne */
+            object-fit: contain; /* Prikazuje cijelu sliku bez sječenja */
+            background: #121629; /* Boja iza slike ako je slika uža */
+            padding: 15px;
+            box-sizing: border-box;
+            transition: transform 0.5s ease;
+        }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-    header {
-        font-size: 2rem;
-    }
-    .products-description {
-        font-size: 1rem;
-    }
-    .modal-description {
-        font-size: 1rem;
-        padding: 15px;
-    }
-}
-@media screen and (max-width: 480px) {
-    header {
-        font-size: 1.5rem;
-    }
-    .products-description {
-        font-size: 0.95rem;
-    }
-    .modal-description {
-        font-size: 0.95rem;
-        padding: 12px;
-    }
-}
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
 
-/* Footer styling */
-.footer {
-    background: #222;
-    color: #f0f0f0;
-    padding: 50px 20px 20px 20px;
-    font-family: Arial, sans-serif;
-}
+        .product-info-box {
+            padding: 20px;
+            background: rgba(31, 37, 64, 0.95);
+            border-top: 1px solid rgba(240, 165, 0, 0.2);
+            text-align: center;
+        }
 
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-}
+        .product-info-box h3 {
+            margin: 0;
+            color: #f0a500;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
 
-.footer-about, .footer-links, .footer-contact, .footer-social {
-    flex: 1 1 220px;
-}
+        /* Poseban stil za sekcije sa 1 proizvodom */
+        .products-container.single {
+            max-width: 450px;
+            margin: 0 auto;
+        }
 
-.footer h3, .footer h4 {
-    color: #f0a500;
-    margin-bottom: 15px;
-}
+        /* Modal / Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .modal.show { display: flex; }
+        .modal-content { max-width: 90%; max-height: 70%; border-radius: 10px; }
+        .modal-description {
+            margin-top: 20px;
+            background: #1f2540;
+            border: 2px solid #f0a500;
+            padding: 20px;
+            border-radius: 12px;
+            color: #fff;
+            max-width: 80%;
+            text-align: center;
+        }
+        .close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
 
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
+        /* Animacije */
+        .animate-in {
+            animation: fadeUp 0.8s ease forwards;
+        }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    text-decoration: none;
-    color: #f0f0f0;
-    transition: color 0.3s;
-}
-
-.footer-links ul li a:hover {
-    color: #f0a500;
-}
-
-.footer-social .social-icons a {
-    margin-right: 10px;
-    display: inline-block;
-    transition: transform 0.3s;
-}
-
-.footer-social .social-icons a:hover {
-    transform: scale(1.2);
-}
-
-.footer-social img {
-    width: 30px;
-    height: 30px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-@media screen and (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-about, .footer-links, .footer-contact, .footer-social {
-        flex: unset;
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .footer-social .social-icons a {
-        margin: 0 10px;
-    }
-}
-
-.social-icon {
-    color: #f0f0f0;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #f0a500;
-    transform: scale(1.3);
-}
-/* Fade-in + slide-up animacija za proizvode */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.product-card {
-    opacity: 0; /* start hidden */
-    transform: translateY(30px);
-    animation-fill-mode: forwards; /* da ostane u finalnom položaju */
-}
-
-/* Dodavanje klase .animate-in aktivira animaciju */
-.product-card.animate-in {
-    animation: fadeUp 0.8s ease-out forwards;
-}
-
-/* Fade-in + slide-up animacija */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Fade-in + slide-up za header i opis */
-h1, .products-description {
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-}
-
-h1.animate-in {
-    animation: fadeUp 0.8s ease-out forwards;
-}
-
-.products-description.animate-in {
-    animation: fadeUp 0.8s ease-out forwards;
-}
-
-/* Fade-in + slide-up za proizvode */
-.product-card {
-    opacity: 0; 
-    transform: translateY(30px);
-    animation-fill-mode: forwards;
-}
-
-.product-card.animate-in {
-    animation: fadeUp 0.8s ease-out forwards;
-}
-
-.products-section {
-    margin-top: 60px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-}
-
-.products-section h2 {
-    text-align: center;
-    color: #f0a500;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-/* Grid kartice unutar sekcije */
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 100%;
-}
-
-/* Da kartice budu iste visine */
-.product-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
-}
-
-.products-container.single {
-    max-width: 410px; /* širina 3 kartice */
-    margin: 0 auto;
-}
-</style>
+        /* Footer */
+        .footer-simple {
+            background: #121629;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(240, 165, 0, 0.2);
+        }
+        .social-icon { color: #f0f0f0; margin: 0 15px; font-size: 24px; transition: 0.3s; }
+        .social-icon:hover { color: #f0a500; transform: scale(1.2); }
+    </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt=""></a>
+        <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt="Steel Art Logo"></a>
         <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item"><a href="index" class="navbar__links">Home</a></li>
@@ -367,129 +185,102 @@ h1.animate-in {
             <li class="navbar__item"><a href="products" class="navbar__links">Products</a></li>
             <li class="navbar__item"><a href="contacts" class="navbar__links">Contacts</a></li>
             <li class="navbar__item"><a href="about" class="navbar__links">About</a></li>
-            <li class="navbar__item"><a href="help" class="navbar__links">Help</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Header -->
-<h1>Our Products</h1>
-
-<!-- Products description -->
-<div class="products-description">
-    <p> Proizvodi se od hladnog lima i koristi se za oblaganje zidova i krovova kao fasadni 
-        profil, dok može služiti i kao profil za zatvoreni tip ograde. Usporedno sa drvenom 
-        poluoblicom, lmenu poluoblicu nije potrebno održavati, dimenzije se izrađuju precizno 
-        po porudžbi čime se smanjuje otpad i pojednostavljuje montaža. Skriveni spoj omogućava
-        gotovo nevidljiv sastav dvije ploče, a za potpuno rustikalan i originalan izgled u 
-        ponudi imamo osim standardnih boja i imitaciju drveta – zlatni hrast i tamni hrast.</p>
+<h1>Proizvodi od lima</h1>
+<div class="products-description animate-in">
+    <p>Nudimo širok asortiman profila od hladnog lima za krovove, fasade i ograde. Precizna izrada po mjeri, moderan dizajn i vrhunska zaštita materijala.</p>
 </div>
 
-<!-- Products grid -->
-
-
-<!-- Zidni profili -->
 <section class="products-section">
     <h2>Fasadni profili</h2>
     <div class="products-container">
-        <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Ravna daska - zidni profil, debljina 0.45-0.60mm')">
-            <img src="images/ravnadaska (1).jpeg" alt="Zidni 1" class="product-image">
+        <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Ravna daska - savršen zidni profil za moderne objekte. Debljina 0.45-0.60mm.')">
+            <img src="images/ravnadaska (1).jpeg" alt="Ravna daska" class="product-image">
+            <div class="product-info-box"><h3>Ravna daska</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
+            </div>
+
         </div>
-        <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica - krovni profil, debljina 0.45-0.60mm')">
-            <img src="images/limena_daska.jpg" alt="Krovni 1" class="product-image">
+        <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica - imitacija drveta sa dugovječnošću metala. Krovni i zidni profil.')">
+            <img src="images/limena_daska.jpg" alt="Limena poluoblica" class="product-image">
+            <div class="product-info-box"><h3>Limena poluoblica</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
+            </div>
         </div>
-        <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena daska lamba - zidni profil, debljina 0.45-0.60mm')">
-            <img src="images/limena_daska2.jpg" alt="Zidni 2" class="product-image">
+        <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena daska lamba - idealna za podšivke i fasadne obloge sa skrivenim spojem.')">
+            <img src="images/limena_daska2.jpg" alt="Limena daska lamba" class="product-image">
+            <div class="product-info-box"><h3>Limena daska lamba</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
+
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Krovni profili -->
 <section class="products-section">
     <h2>Krovni profili</h2>
     <div class="products-container single">
-        <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Trapezni T18 - krovni profil, debljina 0.45-0.55mm')">
-            <img src="images/trapezniT18.jpg" alt="Krovni 2" class="product-image">
+        <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Trapezni T18 - krovni profil visoke nosivosti i izdržljivosti. Debljina 0.45-0.55mm.')">
+            <img src="images/trapezniT18.jpg" alt="Trapezni T18" class="product-image">
+            <div class="product-info-box"><h3>Trapezni T18</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.55mm</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Metalne Konstrukcije -->
 <section class="products-section">
     <h2>Metalne Konstrukcije</h2>
     <div class="products-container single">
-        <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Trapezni T18 - krovni profil, debljina 0.45-0.55mm')">
-            <img src="images/metalna_konstrukcija.jpg" alt="Krovni 2" class="product-image">
+        <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Izrada metalnih konstrukcija po narudžbi za hale, nadstrešnice i pomoćne objekte.')">
+            <img src="images/metalna_konstrukcija.jpg" alt="Metalna konstrukcija" class="product-image">
+            <div class="product-info-box"><h3>Čelične konstrukcije</h3></div>
         </div>
     </div>
 </section>
 
-<!-- Modal -->
 <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImage">
     <div class="modal-description" id="modalText"></div>
 </div>
 
-<!-- Small Footer with Hover Effect -->
-<footer style="    background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
-    <p>&copy; 2022 Steel Art. All rights reserved.</p>
-    <div style="margin:10px 0; font-size:24px;">
-        <a href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" target="_blank" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-icon">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-icon">
-            <i class="fab fa-twitter"></i>
-        </a>
+<footer class="footer-simple">
+    <p>&copy; 2026 Steel Art. Sva prava zadržana.</p>
+    <div style="margin:20px 0;">
+        <a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/38267860064" class="social-icon"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p>Email: <span style="color: #f0a500;">steelartmne@gmail.com</span> | Phone:<span style="color: #f0a500;">+382 67 860 064</span></p>
+    <p>Email: <span style="color:#f0a500;">steelartmne@gmail.com</span> | Tel: <span style="color:#f0a500;">+382 67 860 064</span></p>
 </footer>
 
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <script>
-window.addEventListener('load', () => {
-    // Animacija headera i opisa
-    document.querySelector('h1').classList.add('animate-in');
-    document.querySelector('.products-description').classList.add('animate-in');
-
-    // Animacija proizvoda
-    const products = document.querySelectorAll('.product-card');
-    products.forEach((product, index) => {
-        setTimeout(() => {
-            product.classList.add('animate-in');
-        }, index * 200); // svaki proizvod 0.2s kasnije
+    // Animacija pri skrolu
+    window.addEventListener('load', () => {
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animate-in');
+            }, index * 150);
+        });
     });
-});
 
-// Modal funkcionalnost ostaje isto
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-const modalText = document.getElementById("modalText");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalText = document.getElementById("modalText");
 
-function openModal(imageSrc, description) {
-    modal.classList.add("show");
-    modalImg.src = imageSrc;
-    modalText.textContent = description;
-}
-
-function closeModal() {
-    modal.classList.remove("show");
-}
-
-modal.addEventListener("click", function(event) {
-    if(event.target === modal) {
-        closeModal();
+    function openModal(imageSrc, description) {
+        modal.classList.add("show");
+        modalImg.src = imageSrc;
+        modalText.innerHTML = `<i class="fas fa-info-circle" style="color:#f0a500;"></i> ${description} <br><br> <a href="tel:+38267860064" style="color:#f0a500; text-decoration:none;">Pozovite za cijenu</a>`;
     }
-});
 
+    function closeModal() { modal.classList.remove("show"); }
+    window.onclick = (e) => { if(e.target == modal) closeModal(); }
 </script>
 <script src="app.js"></script>
 </body>

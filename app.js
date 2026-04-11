@@ -35,3 +35,42 @@ window.addEventListener('load', () => {
     });
 });
 
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.services__card').forEach(card => {
+    observer.observe(card);
+});
+
+
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n >= slides.length) { slideIndex = 0 }
+    if (n < 0) { slideIndex = slides.length - 1 }
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    slides[slideIndex].classList.add("active");
+}
+
+// Automatsko pomjeranje (opciono)
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
