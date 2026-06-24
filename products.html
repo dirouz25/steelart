@@ -3,54 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <link rel="canonical" href="https://steel-art.me/products" />
-    <meta name="description" content="Vršimo prodaju i obradu hladnog lima: fasadni i krovni profili, limena daska, trapezni T18 i metalne konstrukcije po narudžbi. Steel Art - Kvalitet i preciznost.">
+    <meta name="description" content="Steel Art Podgorica - Proizvodnja i prodaja krovnih i fasadnih profila od pocinčanog lima. Trapezni lim T18, limena lamperija, daska i metalne konstrukcije po mjeri.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proizvodi od čelika i lima | Steel Art</title>
+    <title>Proizvodi od Lima Podgorica | Steel Art</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif; /* Prilagođeno da prati ostale stranice */
             background: linear-gradient(135deg, #1a1f36, #121629);
             color: #f0f0f0;
             overflow-x: hidden;
         }
 
-        /* Header */
+        /* Responzivan glavni naslov */
         h1 {
             text-align: center;
-            padding: 60px 20px 20px;
-            font-size: 2.5rem;
+            padding: 50px 20px 15px;
+            font-size: clamp(2rem, 5vw, 2.8rem);
             color: #f0a500;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .products-description {
-            max-width: 900px;
-            margin: 0 auto 50px auto;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
             padding: 0 20px;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.6;
             color: #ccc;
         }
 
-        /* Products Section & Grid */
+        /* Sekcije sa proizvodima */
         .products-section {
-            padding: 40px 0;
+            padding: 30px 10px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .products-section h2 {
             text-align: center;
             color: #f0a500;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 35px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
 
         .products-section h2::after {
@@ -64,14 +70,16 @@
             background: #f0a500;
         }
 
+        /* Responzivna rešetka za kartice */
         .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 15px;
+            width: 100%;
         }
 
-        /* Unapređene Kartice (Sređena veličina slika) */
+        /* Unapređene Kartice */
         .product-card {
             background: #1f2540;
             border-radius: 15px;
@@ -81,101 +89,126 @@
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
-            opacity: 0; /* Za animaciju */
+            opacity: 0; 
             transform: translateY(30px);
+            width: 100%;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: #f0a500;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
         .product-image {
             width: 100%;
-            height: 300px; /* Limitirana visina da ne budu ogromne */
-            object-fit: contain; /* Prikazuje cijelu sliku bez sječenja */
-            background: #121629; /* Boja iza slike ako je slika uža */
+            height: 260px; 
+            object-fit: contain; 
+            background: #121629; 
             padding: 15px;
             box-sizing: border-box;
             transition: transform 0.5s ease;
         }
 
+        @media screen and (max-width: 480px) {
+            .product-image {
+                height: 220px;
+            }
+        }
+
         .product-card:hover .product-image {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .product-info-box {
-            padding: 20px;
+            padding: 20px 15px;
             background: rgba(31, 37, 64, 0.95);
             border-top: 1px solid rgba(240, 165, 0, 0.2);
             text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .product-info-box h3 {
             margin: 0;
             color: #f0a500;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             text-transform: uppercase;
         }
 
-        /* Poseban stil za sekcije sa 1 proizvodom */
+        /* Stil za sekcije sa 1 proizvodom */
         .products-container.single {
-            max-width: 450px;
+            max-width: 400px;
             margin: 0 auto;
         }
 
-        /* Modal / Lightbox */
+        /* Modal / Lightbox skočni prozor */
         .modal {
             display: none;
             position: fixed;
             z-index: 9999;
             left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.93);
             backdrop-filter: blur(5px);
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 15px;
         }
         .modal.show { display: flex; }
-        .modal-content { max-width: 90%; max-height: 70%; border-radius: 10px; }
+        
+        .modal-content { 
+            max-width: 95%; 
+            max-height: 65%; 
+            border-radius: 10px; 
+            object-fit: contain;
+        }
+        
         .modal-description {
-            margin-top: 20px;
+            margin-top: 15px;
             background: #1f2540;
             border: 2px solid #f0a500;
-            padding: 20px;
+            padding: 15px 20px;
             border-radius: 12px;
             color: #fff;
-            max-width: 80%;
+            max-width: 90%;
+            width: 500px;
             text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
-        .close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
+        .close { position: absolute; top: 15px; right: 25px; color: #fff; font-size: 40px; cursor: pointer; }
 
-        /* Animacije */
+        /* Animacije učitavanja */
         .animate-in {
-            animation: fadeUp 0.8s ease forwards;
+            opacity: 1; /* Popravljeno sa Tibor na opacity */
+            animation: fadeUp 0.6s ease forwards;
         }
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Footer */
+        /* Responzivan futer */
         .footer-simple {
             background: #121629;
-            padding: 40px 20px;
+            padding: 35px 20px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             border-top: 1px solid rgba(240, 165, 0, 0.2);
+            width: 100%;
         }
-        .social-icon { color: #f0f0f0; margin: 0 15px; font-size: 24px; transition: 0.3s; }
-        .social-icon:hover { color: #f0a500; transform: scale(1.2); }
+        .social-icon { color: #f0f0f0; margin: 0 12px; font-size: 22px; transition: 0.3s; display: inline-block; }
+        .social-icon:hover { color: #f0a500; transform: scale(1.15); }
+        .footer-simple p { font-size: 0.95rem; color: #aaa; }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt="Steel Art Logo"></a>
+        <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt="Steel Art Podgorica Logo"></a>
         <div class="navbar__toggle" id="mobile-menu">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
@@ -185,47 +218,51 @@
             <li class="navbar__item"><a href="products" class="navbar__links">Products</a></li>
             <li class="navbar__item"><a href="contacts" class="navbar__links">Contacts</a></li>
             <li class="navbar__item"><a href="about" class="navbar__links">About</a></li>
-        </ul>
+            <li class="navbar__item"><a href="help" class="navbar__links">Help</a></li> </ul>
     </div>
 </nav>
 
-<h1>Proizvodi od lima</h1>
+<h1>Građevinski profili i limovi</h1>
 <div class="products-description animate-in">
-    <p>Nudimo širok asortiman profila od hladnog lima za krovove, fasade i ograde. Precizna izrada po mjeri, moderan dizajn i vrhunska zaštita materijala.</p>
+    <p>Steel Art Podgorica nudi kompletan asortiman profilisane građevinske limarije vrhunskog kvaliteta. Vršimo hladno valjanje i profilisanje pocinčanih limova za krovove, ograde i fasade po vašim mjerama.</p>
 </div>
 
 <section class="products-section">
-    <h2>Fasadni profili</h2>
+    <h2>Fasadni i zidni profili</h2>
     <div class="products-container">
-        <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Ravna daska - savršen zidni profil za moderne objekte. Debljina 0.45-0.60mm.')">
-            <img src="images/ravnadaska (1).jpeg" alt="Ravna daska" class="product-image">
-            <div class="product-info-box"><h3>Ravna daska</h3>
-                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
-            </div>
-
-        </div>
-        <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica - imitacija drveta sa dugovječnošću metala. Krovni i zidni profil.')">
-            <img src="images/limena_daska.jpg" alt="Limena poluoblica" class="product-image">
-            <div class="product-info-box"><h3>Limena poluoblica</h3>
+        <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Ravna daska od lima - Moderan i elegantan profil za fasade i unutrašnje obloge objekata. Profilisan od najkvalitetnijeg pocinčanog lima. Dostupno u debljinama od 0.45 do 0.60mm.')">
+            <img src="images/ravnadaska (1).jpeg" alt="Ravna daska limeni profil za fasade - Steel Art" class="product-image">
+            <div class="product-info-box">
+                <h3>Ravna daska</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
             </div>
         </div>
-        <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena daska lamba - idealna za podšivke i fasadne obloge sa skrivenim spojem.')">
-            <img src="images/limena_daska2.jpg" alt="Limena daska lamba" class="product-image">
-            <div class="product-info-box"><h3>Limena daska lamba</h3>
+        
+        <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica - Savršen profil u obliku oblica koji kombinuje estetski izgled prirodnog drveta sa vječnom trajnošću pocinčanog lima. Debljine 0.45-0.60mm.')">
+            <img src="images/limena_daska.jpg" alt="Limena poluoblica profil od lima imitacija drveta Podgorica" class="product-image">
+            <div class="product-info-box">
+                <h3>Limena poluoblica</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
-
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena daska lamba (lamperija) - Idealno rešenje za podšivke krovova i fasadne panele sa potpuno skrivenim spojevima i vijcima. Izrada od atestiranog lima debljine 0.45-0.60mm.')">
+            <img src="images/limena_daska2.jpg" alt="Limena daska lamba lamperija za krovni podšiv - Steel Art" class="product-image">
+            <div class="product-info-box">
+                <h3>Limena daska lamba</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="products-section">
-    <h2>Krovni profili</h2>
+    <h2>Krovni profili od lima</h2>
     <div class="products-container single">
-        <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Trapezni T18 - krovni profil visoke nosivosti i izdržljivosti. Debljina 0.45-0.55mm.')">
-            <img src="images/trapezniT18.jpg" alt="Trapezni T18" class="product-image">
-            <div class="product-info-box"><h3>Trapezni T18</h3>
+        <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Trapezni krovni lim T18 - Izuzetno otporan profil visoke nosivosti i krutosti, namijenjen za dugotrajno pokrivanje stambenih, poslovnih i pomoćnih objekata. Debljina atestiranog lima 0.45 - 0.55mm.')">
+            <img src="images/trapezniT18.jpg" alt="Trapezni krovni lim T18 profilisanje - Steel Art Podgorica" class="product-image">
+            <div class="product-info-box">
+                <h3>Trapezni lim T18</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.55mm</p>
             </div>
         </div>
@@ -235,37 +272,39 @@
 <section class="products-section">
     <h2>Metalne Konstrukcije</h2>
     <div class="products-container single">
-        <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Izrada metalnih konstrukcija po narudžbi za hale, nadstrešnice i pomoćne objekte.')">
-            <img src="images/metalna_konstrukcija.jpg" alt="Metalna konstrukcija" class="product-image">
-            <div class="product-info-box"><h3>Čelične konstrukcije</h3></div>
+        <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Projektovanje i izrada metalnih konstrukcija po porudžbini. Profesionalna rešenja za građevinske hale, moderne nadstrešnice, magacine i pomoćne objekte.')">
+            <img src="images/metalna_konstrukcija.jpg" alt="Izrada metalnih konstrukcija Crna Gora" class="product-image">
+            <div class="product-info-box">
+                <h3>Metalne konstrukcije</h3>
+                <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Izrada po nacrtu i mjeri</p>
+            </div>
         </div>
     </div>
 </section>
 
 <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage">
+    <img class="modal-content" id="modalImage" alt="Uvećani prikaz proizvoda">
     <div class="modal-description" id="modalText"></div>
 </div>
 
 <footer class="footer-simple">
-    <p>&copy; 2026 Steel Art. Sva prava zadržana.</p>
-    <div style="margin:20px 0;">
+    <p>&copy; 2026 Steel Art Podgorica. Sva prava zadržana.</p>
+    <div style="margin:18px 0;">
         <a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/38267860064" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/38267860064" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p>Email: <span style="color:#f0a500;">steelartmne@gmail.com</span> | Tel: <span style="color:#f0a500;">+382 67 860 064</span></p>
 </footer>
 
 <script>
-    // Animacija pri skrolu
     window.addEventListener('load', () => {
         const cards = document.querySelectorAll('.product-card');
         cards.forEach((card, index) => {
             setTimeout(() => {
                 card.classList.add('animate-in');
-            }, index * 150);
+            }, index * 120);
         });
     });
 
@@ -274,13 +313,20 @@
     const modalText = document.getElementById("modalText");
 
     function openModal(imageSrc, description) {
-        modal.classList.add("show");
-        modalImg.src = imageSrc;
-        modalText.innerHTML = `<i class="fas fa-info-circle" style="color:#f0a500;"></i> ${description} <br><br> <a href="tel:+38267860064" style="color:#f0a500; text-decoration:none;">Pozovite za cijenu</a>`;
+        if(modal) {
+            modal.classList.add("show");
+            modalImg.src = imageSrc;
+            modalText.innerHTML = `<i class="fas fa-info-circle" style="color:#f0a500;"></i> ${description} <br><br> <a href="tel:+38267860064" style="color:#f0a500; text-decoration:none; font-weight:bold;"><i class="fas fa-phone-alt"></i> Pozovite za cijenu i porudžbinu</a>`;
+        }
     }
 
-    function closeModal() { modal.classList.remove("show"); }
-    window.onclick = (e) => { if(e.target == modal) closeModal(); }
+    function closeModal() { 
+        if(modal) modal.classList.remove("show"); 
+    }
+    
+    window.onclick = (e) => { 
+        if(e.target == modal) closeModal(); 
+    }
 </script>
 <script src="app.js"></script>
 </body>
