@@ -1,276 +1,57 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn-ME">
 <head>
-<link rel="canonical" href="https://steel-art.me/contacts" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt | Steel Art Podgorica - Adresa, Telefon, Email</title>
-<meta name="description" content="Kontaktirajte Steel Art Podgorica za proizvodnju i profilisanje pocinčanog lima. Adresa: Ulica Vojvode Mijajla Nišina br 30, Podgorica. Telefon: +382 67 860 064.">
-<meta property="og:title" content="Kontakt | Steel Art Podgorica">
-<meta property="og:description" content="Adresa, telefon i email Steel Art Podgorica - proizvodnja pocinčanog lima.">
-<meta property="og:url" content="https://steel-art.me/contacts">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="description" content="Kontaktirajte Steel Art d.o.o. u Podgorici. Adresa, telefon, email, radno vrijeme i informacije o dostavi limenih proizvoda širom Crne Gore.">
+<meta name="author" content="Steel Art d.o.o.">
+<meta name="theme-color" content="#1a1f36">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Kontakt | Steel Art d.o.o. Podgorica – Adresa, telefon i email</title>
+<link rel="canonical" href="https://steel-art.me/contacts">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" as="image" href="https://steel-art.me/images/steel-art-hero.webp" fetchpriority="high">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="sr_ME">
+<meta property="og:site_name" content="Steel Art d.o.o.">
+<meta property="og:title" content="Kontakt | Steel Art d.o.o. Podgorica – Adresa, telefon i email">
+<meta property="og:description" content="Kontaktirajte Steel Art d.o.o. u Podgorici. Adresa, telefon, email, radno vrijeme i informacije o dostavi limenih proizvoda širom Crne Gore.">
+<meta property="og:url" content="https://steel-art.me/contacts">
+<meta property="og:image" content="https://steel-art.me/images/steel-art-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kontakt | Steel Art d.o.o. Podgorica – Adresa, telefon i email">
+<meta name="twitter:description" content="Kontaktirajte Steel Art d.o.o. u Podgorici. Adresa, telefon, email, radno vrijeme i informacije o dostavi limenih proizvoda širom Crne Gore.">
+<meta name="twitter:image" content="https://steel-art.me/images/steel-art-og.jpg">
 <link rel="stylesheet" href="style.css">
-<!-- Font Awesome za ikone -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
-    color: #ddd;
-}
-
-/* Main section */
-.main{
-    background: linear-gradient(135deg, #1a1f36, #2a2f4a); /* tamno plavi gradient */
-    
-}
-
-.main__container{
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 2rem;
-}
-
-.main__container h1{
-    font-size: 3rem;
-    color: #c96f4a;
-    margin-bottom: 1rem;
-}
-
-.main__container p{
-    font-size: 1.5rem;
-    color: #ddd;
-}
-
-/* Contact info box */
-.contact-info {
-    background: linear-gradient(
-        135deg,
-        rgba(30, 35, 60, 0.9) 0%,     /* tamno plavi ton */
-        rgba(92, 59, 28, 0.85) 100%   /* bakarni naglasak */
-    );
-    border: 2px solid #f0a500;         /* zlatno-bakarni naglasak */
-    border-radius: 18px;
-    padding: 2.5rem 3rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: left;
-    box-shadow: 0 8px 35px rgba(240, 165, 0, 0.5), 0 4px 20px rgba(0,0,0,0.4); /* glow efekt */
-    backdrop-filter: blur(10px);        /* lagani glass efekt */
-    transition: all 0.4s ease;
-    color: #c96f4a; /* BOJA TEKSTA */
-
-}
-
-.contact-info:hover {
-    box-shadow: 0 12px 45px rgba(240, 165, 0, 0.7), 0 6px 25px rgba(0,0,0,0.5);
-    transform: translateY(-4px);
-}
-
-
-.contact-info h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #c96f4a; /* Naslovi u box-u */
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-}
-
-.contact-info h3 i {
-    margin-right: 10px;
-    color: #e3a376;
-}
-
-.contact-info a,
-.contact-info .address {
-    color: #c96f4a; /* Tekst i linkovi */
-    
-}
-
-.contact-info a:hover {
-    color: #ffd65c; /* Hover efekt za linkove */
-}
-
-/* Map container */
-.map-container {
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    margin: 2rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px){
-    .contact-info{
-        padding: 1.5rem 2rem;
-    }
-    .main__container h1{
-        font-size: 2.5rem;
-    }
-    .main__container p{
-        font-size: 1.2rem;
-    }
-    .map-container{
-        height: 300px;
-    }
-        .main {
-        height: 90vh; /* povećaj visinu za tablete/male ekrane */
-        background-position: center top;
-        }
-    
-}
-    
-
-
-@media screen and (max-width: 480px){
-    .contact-info{
-        padding: 1rem 1.5rem;
-    }
-    .main__container h1{
-        font-size: 2rem;
-    }
-    .main__container p{
-        font-size: 1rem;
-    }
-    .map-container{
-        height: 250px;
-    }
-        .main {
-        height: 100vh; /* zauzima cijeli ekran na telefonima */
-        background-position: top;
-    }
-}
-.contact-info a {
-  display: inline-block;
-  color: #f0a500;
-  font-size: 1.05rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.contact-info a:hover {
-  color: #ffd65c;
-  border-bottom: 1px solid #ffd65c;
-}
-
-/* Adresa */
-.contact-info .address {
-  color: #ccc;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-top: 5px;
-  transition: color 0.3s ease;
-}
-
-
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Steel Art",
-  "url": "https://steel-art.me/contacts",
-  "telephone": "+38267860064",
-  "email": "steelartmne@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Ulica Vojvode Mijajla Nišina br 30",
-    "addressLocality": "Podgorica",
-    "addressCountry": "ME"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 42.459027,
-    "longitude": 19.259486
-  }
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#organization","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":{"@type":"ImageObject","url":"https://steel-art.me/images/logo%20finalni.png"},"image":"https://steel-art.me/images/steel-art-hero.webp","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Crna Gora"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i pruža usluge obrade lima i izrade metalnih konstrukcija, uz dostavu širom Crne Gore."},{"@type":"ContactPage","@id":"https://steel-art.me/contacts#webpage","url":"https://steel-art.me/contacts","name":"Kontakt | Steel Art d.o.o. Podgorica – Adresa, telefon i email","description":"Kontaktirajte Steel Art d.o.o. u Podgorici. Adresa, telefon, email, radno vrijeme i informacije o dostavi limenih proizvoda širom Crne Gore.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#organization"},"inLanguage":"sr-Latn-ME"},{"@type":"BreadcrumbList","@id":"https://steel-art.me/contacts#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://steel-art.me/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://steel-art.me/contacts"}]}]}</script>
 </head>
 <body>
 
-<nav class="navbar">
-        <div class="navbar__container">
+<nav class="navbar" aria-label="Glavna navigacija">
+<div class="navbar__container">
+<a href="/" id="navbar__logo" aria-label="Steel Art d.o.o. – Početna"><img src="/images/logo finalni.png" width="110" height="60" alt="Steel Art d.o.o. Podgorica" decoding="async"></a>
+<div class="navbar__toggle" id="mobile-menu" aria-label="Otvori meni" role="button" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+<ul class="navbar__menu">
+<li class="navbar__item"><a href="/" class="navbar__links">Početna</a></li>
+<li class="navbar__item"><a href="/projects" class="navbar__links">Projekti</a></li>
+<li class="navbar__item"><a href="/products" class="navbar__links">Proizvodi</a></li>
+<li class="navbar__item"><a href="/contacts" class="navbar__links">Kontakt</a></li>
+<li class="navbar__item"><a href="/about" class="navbar__links">O nama</a></li>
+<li class="navbar__item"><a href="/help" class="navbar__links">Česta pitanja</a></li>
+</ul></div></nav>
+<main>
 
-            <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt="Steel Art Podgorica Logo"></a>
-            <div class="navbar__toggle" id="mobile-menu">
-
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-
-            </div>
-
-            <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="index" class="navbar__links">
-                        Home
-                    </a>
-                </li>
-
-                <li class="navbar__item">
-                    <a href="projects" class="navbar__links">
-                        Projects
-                    </a>
-                </li>
-
-               <li class="navbar__item">
-                    <a href="products" class="navbar__links">
-                        Products
-                    </a>
-                </li>
-
-                <li class="navbar__item">
-                    <a href="contacts" class="navbar__links">
-                        Contacts
-                    </a>
-                </li>
-
-                <li class="navbar__item">
-                    <a href="about" class="navbar__links">
-                        About
-                    </a>
-                </li>
-
-
-                <li class="navbar__item">
-                    <a href="help" class="navbar__links">
-                        Help
-                    </a>
-                </li>
-            </ul>
-
-
-            
-        </div>
-    </nav>
 <!-- Main -->
 <div class="main">
     <div class="main__container">
-        <h1>Kontaktirajte Nas</h1>
-        <p>Stupite u kontakt sa Steel Art Podgorica</p>
+        <h1>Kontakt Steel Art d.o.o. Podgorica</h1>
+        <p>Za informacije o trapeznom limu, limenim profilima, metalnim konstrukcijama, obradi lima i dostavi, kontaktirajte naš tim.</p>
 
         <div class="contact-info">
             <div>
@@ -286,32 +67,14 @@ body {
     <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a>
 </div>
 
-        <div class="map-container">
+        </div><div class="contact-info"><div><h3><i class="fas fa-clock"></i> Radno vrijeme</h3><p class="address">Ponedjeljak – petak: 09:00 – 17:00</p></div><div><h3><i class="fas fa-truck"></i> Dostava</h3><p class="address">Dostava proizvoda dostupna je širom Crne Gore. Za dogovor o isporuci navedite lokaciju i željene proizvode.</p></div><div><h3><i class="fas fa-industry"></i> Usluge i proizvodi</h3><p class="address">Trapezni lim, limene oblice i poluoblice, lambda lim, limena daska, obrada lima i metalne konstrukcije.</p></div></div>
+<div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.5294275023475!2d19.259486275975537!3d42.45902747118381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134d95211c0e5bff%3A0x367cec4ae6e20c4e!2sPodgorica!5e0!3m2!1sen!2s!4v1757521974947!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </div>
-<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
-    <p>&copy; 2026 Steel Art Podgorica. Sva prava zadržana.</p>
-    <div style="margin:10px 0; font-size:24px;">
-        <a href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" target="_blank" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-icon">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-icon">
-            <i class="fab fa-twitter"></i>
-        </a>
-    </div>
-    <p>Email: <span style="color: #f0a500;">steelartmne@gmail.com</span> | Phone:<span style="color: #f0a500;">+382 67 860 064</span></p>
-</footer>
-
 <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 <script>
 const modal = document.getElementById("imageModal");
@@ -335,6 +98,19 @@ modal.addEventListener("click", function(event) {
 });
 </script>
 
-<script src="app.js"></script>
+</main>
+<section class="seo-content contacts-seo"><div class="seo-content__inner"><h2>Kontakt za limene proizvode i metalne konstrukcije</h2><p>Steel Art d.o.o. je u Podgorici i dostupan je kupcima koji traže trapezni lim, limene profile, oblice, poluoblice, lambda lim, limenu dasku ili metalne konstrukcije. Ako niste sigurni koji profil odgovara vašem projektu, pošaljite nam osnovne informacije i dimenzije kako bismo mogli razgovarati o odgovarajućem rješenju.</p><p>Za brzu komunikaciju možete pozvati <a href="tel:+38267860064">+382 67 860 064</a> ili poslati email na <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a>. Dostava je dostupna širom Crne Gore, a detalji isporuke dogovaraju se prema lokaciji i naručenim proizvodima.</p><p>Adresa firme je Ulica Vojvode Mijajla Nišina br 30, Podgorica, Crna Gora. Radno vrijeme je ponedjeljak–petak od 09:00 do 17:00.</p></div></section>
+<p>Možete nas kontaktirati i prije nego što definišete konačan proizvod. Dovoljno je poslati opis objekta, približne dimenzije ili fotografiju i osnovni zahtjev. Na osnovu toga možemo nastaviti razgovor o odgovarajućem proizvodu, obradi ili metalnoj konstrukciji.</p>
+<footer class="footer-simple" role="contentinfo">
+<p>&copy; 2026 Steel Art d.o.o. Podgorica. Sva prava zadržana.</p>
+<div style="margin:18px 0;">
+<a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Facebooku"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/steelartmne/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Instagramu"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/38267860064" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kontaktirajte Steel Art putem WhatsApp-a"><i class="fab fa-whatsapp"></i></a>
+</div>
+<p>Email: <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a> &nbsp;|&nbsp; Telefon: <a href="tel:+38267860064">+382 67 860 064</a></p>
+<p>Podgorica, Crna Gora · Dostava širom Crne Gore</p>
+</footer>
+<script src="/app.js" defer></script>
 </body>
 </html>

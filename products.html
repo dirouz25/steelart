@@ -1,237 +1,64 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn-ME">
 <head>
-    <meta charset="UTF-8">
-    <link rel="canonical" href="https://steel-art.me/products" />
-    <meta name="description" content="Steel Art Podgorica - Proizvodnja i prodaja krovnih i fasadnih profila od pocinčanog lima. Trapezni lim T18, limena lamperija, daska i metalne konstrukcije po mjeri.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proizvodi od Lima Podgorica | Steel Art</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="description" content="Steel Art Podgorica nudi trapezni lim, limenu dasku, oblice i poluoblice, lambda lim i metalne konstrukcije. Profilisanje i obrada lima uz dostavu širom Crne Gore.">
+<meta name="author" content="Steel Art d.o.o.">
+<meta name="theme-color" content="#1a1f36">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Proizvodi od lima Podgorica | Trapezni lim i limeni profili | Steel Art</title>
+<link rel="canonical" href="https://steel-art.me/products">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" as="image" href="https://steel-art.me/images/steel-art-hero.webp" fetchpriority="high">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_ME">
+<meta property="og:site_name" content="Steel Art d.o.o.">
+<meta property="og:title" content="Proizvodi od lima Podgorica | Trapezni lim i limeni profili | Steel Art">
+<meta property="og:description" content="Steel Art Podgorica nudi trapezni lim, limenu dasku, oblice i poluoblice, lambda lim i metalne konstrukcije. Profilisanje i obrada lima uz dostavu širom Crne Gore.">
+<meta property="og:url" content="https://steel-art.me/products">
+<meta property="og:image" content="https://steel-art.me/images/steel-art-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proizvodi od lima Podgorica | Trapezni lim i limeni profili | Steel Art">
+<meta name="twitter:description" content="Steel Art Podgorica nudi trapezni lim, limenu dasku, oblice i poluoblice, lambda lim i metalne konstrukcije. Profilisanje i obrada lima uz dostavu širom Crne Gore.">
+<meta name="twitter:image" content="https://steel-art.me/images/steel-art-og.jpg">
+<link rel="stylesheet" href="style.css">
 
-        body {
-            font-family: Arial, sans-serif; /* Prilagođeno da prati ostale stranice */
-            background: linear-gradient(135deg, #1a1f36, #121629);
-            color: #f0f0f0;
-            overflow-x: hidden;
-        }
-
-        /* Responzivan glavni naslov */
-        h1 {
-            text-align: center;
-            padding: 50px 20px 15px;
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            color: #f0a500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .products-description {
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            padding: 0 20px;
-            text-align: center;
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        /* Sekcije sa proizvodima */
-        .products-section {
-            padding: 30px 10px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .products-section h2 {
-            text-align: center;
-            color: #f0a500;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            margin-bottom: 35px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .products-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: #f0a500;
-        }
-
-        /* Responzivna rešetka za kartice */
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            padding: 0 15px;
-            width: 100%;
-        }
-
-        /* Unapređene Kartice */
-        .product-card {
-            background: #1f2540;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid rgba(240, 165, 0, 0.15);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            opacity: 0; 
-            transform: translateY(30px);
-            width: 100%;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            border-color: #f0a500;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 260px; 
-            object-fit: contain; 
-            background: #121629; 
-            padding: 15px;
-            box-sizing: border-box;
-            transition: transform 0.5s ease;
-        }
-
-        @media screen and (max-width: 480px) {
-            .product-image {
-                height: 220px;
-            }
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.04);
-        }
-
-        .product-info-box {
-            padding: 20px 15px;
-            background: rgba(31, 37, 64, 0.95);
-            border-top: 1px solid rgba(240, 165, 0, 0.2);
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-info-box h3 {
-            margin: 0;
-            color: #f0a500;
-            font-size: 1.15rem;
-            text-transform: uppercase;
-        }
-
-        /* Stil za sekcije sa 1 proizvodom */
-        .products-container.single {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        /* Modal / Lightbox skočni prozor */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.93);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 15px;
-        }
-        .modal.show { display: flex; }
-        
-        .modal-content { 
-            max-width: 95%; 
-            max-height: 65%; 
-            border-radius: 10px; 
-            object-fit: contain;
-        }
-        
-        .modal-description {
-            margin-top: 15px;
-            background: #1f2540;
-            border: 2px solid #f0a500;
-            padding: 15px 20px;
-            border-radius: 12px;
-            color: #fff;
-            max-width: 90%;
-            width: 500px;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .close { position: absolute; top: 15px; right: 25px; color: #fff; font-size: 40px; cursor: pointer; }
-
-        /* Animacije učitavanja */
-        .animate-in {
-            opacity: 1; /* Popravljeno sa Tibor na opacity */
-            animation: fadeUp 0.6s ease forwards;
-        }
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responzivan futer */
-        .footer-simple {
-            background: #121629;
-            padding: 35px 20px;
-            text-align: center;
-            margin-top: 50px;
-            border-top: 1px solid rgba(240, 165, 0, 0.2);
-            width: 100%;
-        }
-        .social-icon { color: #f0f0f0; margin: 0 12px; font-size: 22px; transition: 0.3s; display: inline-block; }
-        .social-icon:hover { color: #f0a500; transform: scale(1.15); }
-        .footer-simple p { font-size: 0.95rem; color: #aaa; }
-    </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#organization","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":{"@type":"ImageObject","url":"https://steel-art.me/images/logo%20finalni.png"},"image":"https://steel-art.me/images/steel-art-hero.webp","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Crna Gora"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i pruža usluge obrade lima i izrade metalnih konstrukcija, uz dostavu širom Crne Gore."},{"@type":"CollectionPage","@id":"https://steel-art.me/products#webpage","url":"https://steel-art.me/products","name":"Proizvodi od lima Podgorica | Trapezni lim i limeni profili | Steel Art","description":"Steel Art Podgorica nudi trapezni lim, limenu dasku, oblice i poluoblice, lambda lim i metalne konstrukcije. Profilisanje i obrada lima uz dostavu širom Crne Gore.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#organization"},"inLanguage":"sr-Latn-ME"},{"@type":"BreadcrumbList","@id":"https://steel-art.me/products#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://steel-art.me/"},{"@type":"ListItem","position":2,"name":"Proizvodi od lima Podgorica","item":"https://steel-art.me/products"}]},{"@type":"ItemList","name":"Proizvodi Steel Art","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Trapezni lim T18","description":"Trapezni krovni lim T18 za stambene, poslovne i pomoćne objekte.","image":"https://steel-art.me/images/trapezni-t18.webp","brand":{"@type":"Brand","name":"Steel Art"}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Limena daska","description":"Limeni profil za fasadne i završne obloge objekata.","image":"https://steel-art.me/images/limena_daska2.webp","brand":{"@type":"Brand","name":"Steel Art"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Limena poluoblica","description":"Profilisana limena poluoblica za dekorativne i zaštitne obloge.","image":"https://steel-art.me/images/limena_daska.webp","brand":{"@type":"Brand","name":"Steel Art"}}},{"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Ravna daska","description":"Ravna limena daska za fasadne i završne obloge.","image":"https://steel-art.me/images/ravna-daska.webp","brand":{"@type":"Brand","name":"Steel Art"}}},{"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Metalne konstrukcije","description":"Izrada metalnih konstrukcija prema nacrtu i mjeri.","image":"https://steel-art.me/images/metalne-konstrukcije.webp","brand":{"@type":"Brand","name":"Steel Art"}}}]}]}</script>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="navbar__container">
-        <a href="index" id="navbar__logo"><img src="images/logo finalni.png" width="110px" height="60px" alt="Steel Art Podgorica Logo"></a>
-        <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-            <li class="navbar__item"><a href="index" class="navbar__links">Home</a></li>
-            <li class="navbar__item"><a href="projects" class="navbar__links">Projects</a></li>
-            <li class="navbar__item"><a href="products" class="navbar__links">Products</a></li>
-            <li class="navbar__item"><a href="contacts" class="navbar__links">Contacts</a></li>
-            <li class="navbar__item"><a href="about" class="navbar__links">About</a></li>
-            <li class="navbar__item"><a href="help" class="navbar__links">Help</a></li> </ul>
-    </div>
-</nav>
+<nav class="navbar" aria-label="Glavna navigacija">
+<div class="navbar__container">
+<a href="/" id="navbar__logo" aria-label="Steel Art d.o.o. – Početna"><img src="/images/logo finalni.png" width="110" height="60" alt="Steel Art d.o.o. Podgorica" decoding="async" loading="lazy"></a>
+<div class="navbar__toggle" id="mobile-menu" aria-label="Otvori meni" role="button" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+<ul class="navbar__menu">
+<li class="navbar__item"><a href="/" class="navbar__links">Početna</a></li>
+<li class="navbar__item"><a href="/projects" class="navbar__links">Projekti</a></li>
+<li class="navbar__item"><a href="/products" class="navbar__links">Proizvodi</a></li>
+<li class="navbar__item"><a href="/contacts" class="navbar__links">Kontakt</a></li>
+<li class="navbar__item"><a href="/about" class="navbar__links">O nama</a></li>
+<li class="navbar__item"><a href="/help" class="navbar__links">Česta pitanja</a></li>
+</ul></div></nav>
 
-<h1>Građevinski profili i limovi</h1>
+<main><h1>Trapezni lim i limeni profili – Steel Art Podgorica</h1>
 <div class="products-description animate-in">
-    <p>Steel Art Podgorica nudi kompletan asortiman profilisane građevinske limarije vrhunskog kvaliteta. Vršimo hladno valjanje i profilisanje pocinčanih limova za krovove, ograde i fasade po vašim mjerama.</p>
+<p>Steel Art d.o.o. iz Podgorice proizvodi i nudi profilisane limene proizvode za krovove, fasade i završne obloge. U ponudi su trapezni lim, limena daska, limene oblice i poluoblice, lambda lim i metalne konstrukcije. Za potrebe projekta moguće je dogovoriti obradu lima prema mjeri i nacrtu.</p>
+<p>Ako tražite <strong>trapezni lim u Podgorici</strong> ili limene profile za objekat u drugom gradu Crne Gore, kontaktirajte nas za informacije o dimenzijama, debljinama, dostupnosti i dostavi.</p>
 </div>
+
+<section class="seo-content"><div class="seo-content__inner"><h2>Profilisani limovi za krovove i fasade</h2><p>Steel Art d.o.o. u Podgorici nudi više vrsta limenih profila za građevinske radove. Trapezni lim T18 je dio krovne ponude, dok su ravna daska, limena daska i poluoblica namijenjene različitim završnim i fasadnim primjenama. U ponudi su i lambda lim, limena oblica i metalne konstrukcije.</p><p>Specifikacija proizvoda zavisi od namjene. Kod pojedinih proizvoda dostupne su različite debljine, a konačan izbor treba uskladiti sa projektom i načinom ugradnje. Ako imate tačnu mjeru, količinu ili nacrt, pošaljite nam upit prije naručivanja.</p><p>Za kupce izvan Podgorice možemo organizovati dostavu širom Crne Gore. Za cijenu, dostupnost i detalje isporuke kontaktirajte Steel Art direktno.</p></div></section>
 
 <section class="products-section">
     <h2>Fasadni i zidni profili</h2>
     <div class="products-container">
         <div class="product-card" onclick="openModal('images/ravnadaska (1).jpeg', 'Ravna daska od lima - Moderan i elegantan profil za fasade i unutrašnje obloge objekata. Profilisan od najkvalitetnijeg pocinčanog lima. Dostupno u debljinama od 0.45 do 0.60mm.')">
-            <img src="images/ravnadaska (1).jpeg" alt="Ravna daska limeni profil za fasade - Steel Art" class="product-image">
+            <img src="/images/ravna-daska.webp" alt="Ravna daska limeni profil za fasade - Steel Art" class="product-image" loading="lazy" decoding="async">
             <div class="product-info-box">
                 <h3>Ravna daska</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
@@ -239,7 +66,7 @@
         </div>
         
         <div class="product-card" onclick="openModal('images/limena_daska.jpg', 'Limena poluoblica - Savršen profil u obliku oblica koji kombinuje estetski izgled prirodnog drveta sa vječnom trajnošću pocinčanog lima. Debljine 0.45-0.60mm.')">
-            <img src="images/limena_daska.jpg" alt="Limena poluoblica profil od lima imitacija drveta Podgorica" class="product-image">
+            <img src="/images/limena_daska.webp" alt="Limena poluoblica profil od lima imitacija drveta Podgorica" class="product-image" loading="lazy" decoding="async">
             <div class="product-info-box">
                 <h3>Limena poluoblica</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
@@ -247,7 +74,7 @@
         </div>
         
         <div class="product-card" onclick="openModal('images/limena_daska2.jpg', 'Limena daska lamba (lamperija) - Idealno rešenje za podšivke krovova i fasadne panele sa potpuno skrivenim spojevima i vijcima. Izrada od atestiranog lima debljine 0.45-0.60mm.')">
-            <img src="images/limena_daska2.jpg" alt="Limena daska lamba lamperija za krovni podšiv - Steel Art" class="product-image">
+            <img src="/images/limena_daska2.webp" alt="Limena daska lamba lamperija za krovni podšiv - Steel Art" class="product-image" loading="lazy" decoding="async">
             <div class="product-info-box">
                 <h3>Limena daska lamba</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.60mm</p>
@@ -256,11 +83,15 @@
     </div>
 </section>
 
+<section class="products-section"><h2>Ostali limeni proizvodi</h2><div class="products-container"><div class="product-card animate-in"><div class="product-info-box"><h3>Limena oblica</h3><p>Profilisana limena oblica za završne i dekorativne obloge. Specifikacija i dostupne mjere dogovaraju se sa kupcem.</p></div></div><div class="product-card animate-in"><div class="product-info-box"><h3>Lambda lim</h3><p>Lambda lim kao dio ponude limenih profila Steel Art. Za dostupne dimenzije i način primjene pošaljite upit.</p></div></div></div></section>
+
+<section class="seo-content" aria-labelledby="product-info-title"><div class="seo-content__inner"><h2 id="product-info-title">Kako izabrati limeni proizvod?</h2><p>Izbor profila zavisi od namjene objekta, potrebne dimenzije, konstrukcije i načina ugradnje. Kod krovnih profila važni su oblik profila i specifikacija lima, dok se kod fasadnih i dekorativnih obloga pažnja posvećuje izgledu, završnoj obradi i mjeri. Steel Art može pružiti informacije o dostupnim proizvodima i dogovoriti detalje prije naručivanja.</p><p>Za metalne konstrukcije specifikacija se određuje prema nacrtu i mjeri. Ako imate projekat ili konkretan zahtjev, pošaljite nam dimenzije i osnovne informacije kako bismo mogli pripremiti odgovor.</p></div></section>
+
 <section class="products-section">
     <h2>Krovni profili od lima</h2>
     <div class="products-container single">
         <div class="product-card" onclick="openModal('images/trapezniT18.jpg', 'Trapezni krovni lim T18 - Izuzetno otporan profil visoke nosivosti i krutosti, namijenjen za dugotrajno pokrivanje stambenih, poslovnih i pomoćnih objekata. Debljina atestiranog lima 0.45 - 0.55mm.')">
-            <img src="images/trapezniT18.jpg" alt="Trapezni krovni lim T18 profilisanje - Steel Art Podgorica" class="product-image">
+            <img src="/images/trapezni-t18.webp" alt="Trapezni krovni lim T18 profilisanje - Steel Art Podgorica" class="product-image" loading="lazy" decoding="async">
             <div class="product-info-box">
                 <h3>Trapezni lim T18</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Debljina: 0.45 - 0.55mm</p>
@@ -273,7 +104,7 @@
     <h2>Metalne Konstrukcije</h2>
     <div class="products-container single">
         <div class="product-card" onclick="openModal('images/metalna_konstrukcija.jpg', 'Projektovanje i izrada metalnih konstrukcija po porudžbini. Profesionalna rešenja za građevinske hale, moderne nadstrešnice, magacine i pomoćne objekte.')">
-            <img src="images/metalna_konstrukcija.jpg" alt="Izrada metalnih konstrukcija Crna Gora" class="product-image">
+            <img src="/images/metalne-konstrukcije.webp" alt="Izrada metalnih konstrukcija Crna Gora" class="product-image" loading="lazy" decoding="async">
             <div class="product-info-box">
                 <h3>Metalne konstrukcije</h3>
                 <p style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">Izrada po nacrtu i mjeri</p>
@@ -284,19 +115,11 @@
 
 <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage" alt="Uvećani prikaz proizvoda">
+    <img class="modal-content" id="modalImage" alt="Uvećani prikaz proizvoda" loading="lazy" decoding="async">
     <div class="modal-description" id="modalText"></div>
 </div>
 
-<footer class="footer-simple">
-    <p>&copy; 2026 Steel Art Podgorica. Sva prava zadržana.</p>
-    <div style="margin:18px 0;">
-        <a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/38267860064" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <p>Email: <span style="color:#f0a500;">steelartmne@gmail.com</span> | Tel: <span style="color:#f0a500;">+382 67 860 064</span></p>
-</footer>
+
 
 <script>
     window.addEventListener('load', () => {
@@ -328,6 +151,17 @@
         if(e.target == modal) closeModal(); 
     }
 </script>
-<script src="app.js"></script>
+</main>
+<footer class="footer-simple" role="contentinfo">
+<p>&copy; 2026 Steel Art d.o.o. Podgorica. Sva prava zadržana.</p>
+<div style="margin:18px 0;">
+<a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Facebooku"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/steelartmne/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Instagramu"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/38267860064" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kontaktirajte Steel Art putem WhatsApp-a"><i class="fab fa-whatsapp"></i></a>
+</div>
+<p>Email: <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a> &nbsp;|&nbsp; Telefon: <a href="tel:+38267860064">+382 67 860 064</a></p>
+<p>Podgorica, Crna Gora · Dostava širom Crne Gore</p>
+</footer>
+<script src="/app.js" defer></script>
 </body>
 </html>
