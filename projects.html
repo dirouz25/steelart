@@ -1,154 +1,454 @@
 <!DOCTYPE html>
-<html lang="sr-Latn-ME">
+
+<html lang="sr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="description" content="Pogledajte projekte i reference Steel Art d.o.o. iz Podgorice: limeni krovovi, profilisani limovi, građevinska limarija i metalne konstrukcije u Crnoj Gori.">
-<meta name="author" content="Steel Art d.o.o.">
-<meta name="theme-color" content="#1a1f36">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Projekti i reference | Limeni krovovi i metalne konstrukcije | Steel Art</title>
-<link rel="canonical" href="https://steel-art.me/projects">
-<link rel="icon" type="image/png" href="/images/favicon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="image" href="https://steel-art.me/images/steel-art-hero.webp" fetchpriority="high">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="sr_ME">
-<meta property="og:site_name" content="Steel Art d.o.o.">
-<meta property="og:title" content="Projekti i reference | Limeni krovovi i metalne konstrukcije | Steel Art">
-<meta property="og:description" content="Pogledajte projekte i reference Steel Art d.o.o. iz Podgorice: limeni krovovi, profilisani limovi, građevinska limarija i metalne konstrukcije u Crnoj Gori.">
-<meta property="og:url" content="https://steel-art.me/projects">
-<meta property="og:image" content="https://steel-art.me/images/steel-art-og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Projekti i reference | Limeni krovovi i metalne konstrukcije | Steel Art">
-<meta name="twitter:description" content="Pogledajte projekte i reference Steel Art d.o.o. iz Podgorice: limeni krovovi, profilisani limovi, građevinska limarija i metalne konstrukcije u Crnoj Gori.">
-<meta name="twitter:image" content="https://steel-art.me/images/steel-art-og.jpg">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<link href="https://steel-art.me/projects" rel="canonical"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projekti | Steel Art d.o.o. Podgorica</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#organization","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":{"@type":"ImageObject","url":"https://steel-art.me/images/logo%20finalni.png"},"image":"https://steel-art.me/images/steel-art-hero.webp","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Crna Gora"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i pruža usluge obrade lima i izrade metalnih konstrukcija, uz dostavu širom Crne Gore."},{"@type":"CollectionPage","@id":"https://steel-art.me/projects#webpage","url":"https://steel-art.me/projects","name":"Projekti i reference | Limeni krovovi i metalne konstrukcije | Steel Art","description":"Pogledajte projekte i reference Steel Art d.o.o. iz Podgorice: limeni krovovi, profilisani limovi, građevinska limarija i metalne konstrukcije u Crnoj Gori.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#organization"},"inLanguage":"sr-Latn-ME"},{"@type":"BreadcrumbList","@id":"https://steel-art.me/projects#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://steel-art.me/"},{"@type":"ListItem","position":2,"name":"Projekti i reference","item":"https://steel-art.me/projects"}]}]}</script>
-</head>
+        body {
+            background: linear-gradient(135deg, #1a1f36, #2a2f4a);
+            color: #ddd;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Glavni kontejner sekcije */
+        .main {
+            background: linear-gradient(135deg, #1a1f36, #2a2f4a);
+            padding: 20px 10px;
+        }
+
+        .main__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            height: auto;
+            max-width: 1200px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2a2f4a 0%, #3b4166 60%, #5c3b1c 100%);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .main__content {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* RESPONZIVAN NASLOV: Smanjuje se automatski na telefonima */
+        .main__content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            background: linear-gradient(to top, #f0a500, #c96f4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .main__content p {
+            color: #ddd;
+            margin-top: 5px;
+            text-align: center;
+            padding-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Kontejner za galeriju slika */
+        .projects-gallery {
+            width: 100%;
+            max-width: 1000px;
+            margin: 10px auto 30px auto;
+        }
+
+        /* Glavni prikaz slika - fluidna visina */
+        .main-display {
+            position: relative;
+            width: 100%;
+            height: 550px; 
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 2px solid rgba(240, 165, 0, 0.2);
+        }
+
+        .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            cursor: pointer;
+        }
+
+        .main-img.active {
+            display: block;
+            animation: fadeEffect 0.5s ease-in;
+        }
+
+        /* Navigaciona dugmad strelica */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(240, 165, 0, 0.9);
+            color: #1a1f36;
+            border: none;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+            border-radius: 50%;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover { background: #fff; }
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        /* Traka sa sličicama (Thumbnails) */
+        .thumb-bar {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding: 10px 5px;
+            scrollbar-width: thin;
+            scrollbar-color: #f0a500 #1a1f36;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .thumb {
+            width: 90px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.4;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .thumb.active, .thumb:hover {
+            opacity: 1;
+            border-color: #f0a500;
+            transform: translateY(-2px);
+        }
+
+        /* Chrome/Edge skrol bar */
+        .thumb-bar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .thumb-bar::-webkit-scrollbar-thumb {
+            background: #f0a500;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Poziv na akciju (CTA Sekcija) */
+        .cta-section {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #1a1f36 0%, #121629 100%);
+            text-align: center;
+            border: 2px solid rgba(240, 165, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 35px auto; 
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            color: #f0a500;
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            margin-bottom: 15px;
+        }
+
+        .cta-content p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .cta-socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .fb { background: #1877f2; }
+        .wa { background: #25d366; }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-divider {
+            margin: 25px 0;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-divider span {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #121629;
+            padding: 0 15px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        .cta-products-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #f0a500;
+            color: #1a1f36;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cta-products-btn:hover {
+            background: #fff;
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(240, 165, 0, 0.4);
+        }
+
+        /* Lightbox (Skočni prozor slike) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        #lightbox.show { display: flex; }
+
+        #lightbox-img {
+            max-width: 92%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+        }
+
+        #lightbox-close {
+            position: fixed;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 38px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10001;
+        }
+
+        /* --- MEDIA QUERIES ZA MOBILNE TELEFONE --- */
+        @media screen and (max-width: 768px) {
+            .main-display {
+                height: 360px; /* Smanjena visina glavnog slajdera na telefonima */
+            }
+            .nav-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+            .thumb {
+                width: 70px;
+                height: 50px;
+            }
+            .main__container {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-display {
+                height: 260px; /* Ekstra smanjenje za male ekrane telefona */
+            }
+            .social-link {
+                width: 100%; /* Društvene mreže idu jedna ispod druge radi lakšeg klika prstom */
+                justify-content: center;
+            }
+            .prev-btn { left: 8px; }
+            .next-btn { right: 8px; }
+        }
+    </style>
+<meta content="Pogledajte projekte i izvedene radove Steel Art d.o.o. iz Podgorice. Limeni profili, krovna i fasadna rješenja i metalne konstrukcije." name="description"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/><meta content="Steel Art d.o.o." name="author"/><meta content="#1f2540" name="theme-color"/><link href="https://steel-art.me/projects" rel="canonical"/><meta content="website" property="og:type"/><meta content="sr_ME" property="og:locale"/><meta content="Steel Art d.o.o." property="og:site_name"/><meta content="Projekti | Steel Art d.o.o. Podgorica" property="og:title"/><meta content="Pogledajte projekte i izvedene radove Steel Art d.o.o. iz Podgorice. Limeni profili, krovna i fasadna rješenja i metalne konstrukcije." property="og:description"/><meta content="https://steel-art.me/projects" property="og:url"/><meta content="https://steel-art.me/images/logo%20finalni.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Projekti | Steel Art d.o.o. Podgorica" name="twitter:title"/><meta content="Pogledajte projekte i izvedene radove Steel Art d.o.o. iz Podgorice. Limeni profili, krovna i fasadna rješenja i metalne konstrukcije." name="twitter:description"/><meta content="https://steel-art.me/images/logo%20finalni.png" name="twitter:image"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#localbusiness","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":"https://steel-art.me/images/logo%20finalni.png","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Montenegro"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i izrađuje metalne konstrukcije, uz dostavu širom Crne Gore."},{"@type":"WebSite","@id":"https://steel-art.me/#website","url":"https://steel-art.me/","name":"Steel Art d.o.o.","publisher":{"@id":"https://steel-art.me/#localbusiness"},"inLanguage":"sr-Latn-ME"},{"@type":"WebPage","@id":"https://steel-art.me/projects#webpage","url":"https://steel-art.me/projects","name":"Projekti | Steel Art d.o.o. Podgorica","description":"Pogledajte projekte i izvedene radove Steel Art d.o.o. iz Podgorice. Limeni profili, krovna i fasadna rješenja i metalne konstrukcije.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#localbusiness"},"inLanguage":"sr-Latn-ME"}]}</script></head>
 <body>
-
-<nav class="navbar" aria-label="Glavna navigacija">
+<nav class="navbar">
 <div class="navbar__container">
-<a href="/" id="navbar__logo" aria-label="Steel Art d.o.o. – Početna"><img src="/images/logo finalni.png" width="110" height="60" alt="Steel Art d.o.o. Podgorica" decoding="async" loading="lazy"></a>
-<div class="navbar__toggle" id="mobile-menu" aria-label="Otvori meni" role="button" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+<a href="index" id="navbar__logo"><img alt="Steel Art Podgorica" height="60px" src="images/logo finalni.png" width="110px"/></a>
+<div class="navbar__toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
 <ul class="navbar__menu">
-<li class="navbar__item"><a href="/" class="navbar__links">Početna</a></li>
-<li class="navbar__item"><a href="/projects" class="navbar__links">Projekti</a></li>
-<li class="navbar__item"><a href="/products" class="navbar__links">Proizvodi</a></li>
-<li class="navbar__item"><a href="/contacts" class="navbar__links">Kontakt</a></li>
-<li class="navbar__item"><a href="/about" class="navbar__links">O nama</a></li>
-<li class="navbar__item"><a href="/help" class="navbar__links">Česta pitanja</a></li>
-</ul></div></nav>
-
+<li class="navbar__item"><a class="navbar__links" href="index">Home</a></li>
+<li class="navbar__item"><a class="navbar__links" href="projects">Projects</a></li>
+<li class="navbar__item"><a class="navbar__links" href="products">Products</a></li>
+<li class="navbar__item"><a class="navbar__links" href="contacts">Contacts</a></li>
+<li class="navbar__item"><a class="navbar__links" href="about">About</a></li>
+<li class="navbar__item"><a class="navbar__links" href="help">Help</a></li>
+</ul>
+</div>
+</nav>
 <div class="main">
-  <div class="main__container">
-    <div class="main__content">
-      <main><section class="projects-intro"><h1>Projekti i reference Steel Art Podgorica</h1><p>Na ovoj stranici možete pogledati dio radova i primjera primjene limenih proizvoda i metalnih konstrukcija. Projekti obuhvataju krovne i zidne limene profile, građevinsku limariju, obradu lima i metalne konstrukcije.</p></section>
-      <p>Ovo su neki od naših radova</p>
-      
-      <div class="projects-gallery">
-        <div class="main-display">
-            <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            
-            <img src="/images/projekat4.webp" class="main-img active" alt="Limeni krovovi i građevinska limarija Podgorica" loading="lazy" decoding="async">
-            <img src="/images/projekat1.webp" class="main-img" alt="Profilisanje i montaza pocincanog lima" loading="lazy" decoding="async">
-            <img src="/images/projekat2.webp" class="main-img" alt="Trapezni krovni lim Steel Art" loading="lazy" decoding="async">
-            <img src="/images/projekat3jpg.webp" class="main-img" alt="Zidni i fasadni profilisani limovi" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_1.webp" class="main-img" alt="Izrada metalnih konstrukcija i krovova" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_2.webp" class="main-img" alt="Lim u obliku lamperije Crna Gora" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_3.webp" class="main-img" alt="Usluzno savijanje i sijecenje lima" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_14.webp" class="main-img" alt="Pokrivanje objekata trapezni lim" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_5.webp" class="main-img" alt="Krovne konstrukcije Steel Art Podgorica" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_6.webp" class="main-img" alt="Hladno valjani limovi i profili" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_7.webp" class="main-img" alt="Plastificirani krovni limovi" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_8.webp" class="main-img" alt="Dostava lima na gradiliste Podgorica" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_9.webp" class="main-img" alt="Limarija po mjeri i nacrtu" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_10.webp" class="main-img" alt="Proizvodnja trapeznog i sinusnog lima" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_11.webp" class="main-img" alt="Celni i vjetar lajsne od lima" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_12.webp" class="main-img" alt="Izrada gradjevinske limarije" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_13.webp" class="main-img" alt="Pokrivanje hala i magacina limom" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_4.webp" class="main-img" alt="Atestirani pocincani limovi" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_15.webp" class="main-img" alt="Zidni sendvic paneli i profili" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_16.webp" class="main-img" alt="Montaza krovnog lima Podgorica" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_17.webp" class="main-img" alt="Limeni profili visokog kvaliteta" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_18.webp" class="main-img" alt="Sjecište i obrada limova na mjeru" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_19.webp" class="main-img" alt="Savremene masine za profilisanje lima" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_20.webp" class="main-img" alt="Oluci i krovna oprema od lima" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_21.webp" class="main-img" alt="Steel Art reference krovnih pokrivaca" loading="lazy" decoding="async">
-
-            <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-
-        <div class="thumb-bar" id="thumbBar">
-            <img src="/images/projekat4.webp" onclick="currentSlide(0)" class="thumb active" loading="lazy" decoding="async">
-            <img src="/images/projekat1.webp" onclick="currentSlide(1)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/projekat2.webp" onclick="currentSlide(2)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/projekat3jpg.webp" onclick="currentSlide(3)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_1.webp" onclick="currentSlide(4)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_2.webp" onclick="currentSlide(5)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_3.webp" onclick="currentSlide(6)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_14.webp" onclick="currentSlide(7)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_5.webp" onclick="currentSlide(8)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_6.webp" onclick="currentSlide(9)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_7.webp" onclick="currentSlide(10)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_8.webp" onclick="currentSlide(11)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_9.webp" onclick="currentSlide(12)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_10.webp" onclick="currentSlide(13)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_11.webp" onclick="currentSlide(14)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_12.webp" onclick="currentSlide(15)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_13.webp" onclick="currentSlide(16)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_4.webp" onclick="currentSlide(17)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_15.webp" onclick="currentSlide(18)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_16.webp" onclick="currentSlide(19)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_17.webp" onclick="currentSlide(20)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_18.webp" onclick="currentSlide(21)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_19.webp" onclick="currentSlide(22)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_20.webp" onclick="currentSlide(23)" class="thumb" loading="lazy" decoding="async">
-            <img src="/images/slike_projekta_21.webp" onclick="currentSlide(24)" class="thumb" loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      <section class="cta-section">
-          <div class="cta-content">
-              <h2>Sviđa vam se naš rad?</h2>
-              <p>Svaki projekat radimo s posebnom pažnjom na detalje. Detaljnije o procesima rada, novim projektima i svakodnevnim aktivnostima možete saznati putem naših društvenih mreža:</p>
-              
-              <div class="cta-socials">
-                  <a href="https://www.instagram.com/steelartmne/" target="_blank" class="social-link insta">
-                      <i class="fab fa-instagram"></i> Instagram
+<div class="main__container">
+<div class="main__content">
+<h1>Steel Art</h1>
+<p>Ovo su neki od naših radova</p>
+<div class="projects-gallery">
+<div class="main-display">
+<button class="nav-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+<img alt="Limeni krovovi i građevinska limarija Podgorica" class="main-img active" src="images/projekat4.jpg"/>
+<img alt="Profilisanje i montaza pocincanog lima" class="main-img" src="images/projekat1.jpg"/>
+<img alt="Trapezni krovni lim Steel Art" class="main-img" src="images/projekat2.jpg"/>
+<img alt="Zidni i fasadni profilisani limovi" class="main-img" src="images/projekat3jpg.jpg"/>
+<img alt="Izrada metalnih konstrukcija i krovova" class="main-img" src="images/slike_projekta_1.jpg"/>
+<img alt="Lim u obliku lamperije Crna Gora" class="main-img" src="images/slike_projekta_2.jpg"/>
+<img alt="Usluzno savijanje i sijecenje lima" class="main-img" src="images/slike_projekta_3.jpg"/>
+<img alt="Pokrivanje objekata trapezni lim" class="main-img" src="images/slike_projekta_14.jpg"/>
+<img alt="Krovne konstrukcije Steel Art Podgorica" class="main-img" src="images/slike_projekta_5.jpg"/>
+<img alt="Hladno valjani limovi i profili" class="main-img" src="images/slike_projekta_6.jpg"/>
+<img alt="Plastificirani krovni limovi" class="main-img" src="images/slike_projekta_7.jpg"/>
+<img alt="Dostava lima na gradiliste Podgorica" class="main-img" src="images/slike_projekta_8.jpg"/>
+<img alt="Limarija po mjeri i nacrtu" class="main-img" src="images/slike_projekta_9.jpg"/>
+<img alt="Proizvodnja trapeznog i sinusnog lima" class="main-img" src="images/slike_projekta_10.jpg"/>
+<img alt="Celni i vjetar lajsne od lima" class="main-img" src="images/slike_projekta_11.jpg"/>
+<img alt="Izrada gradjevinske limarije" class="main-img" src="images/slike_projekta_12.jpg"/>
+<img alt="Pokrivanje hala i magacina limom" class="main-img" src="images/slike_projekta_13.jpg"/>
+<img alt="Atestirani pocincani limovi" class="main-img" src="images/slike_projekta_4.jpg"/>
+<img alt="Zidni sendvic paneli i profili" class="main-img" src="images/slike_projekta_15.jpg"/>
+<img alt="Montaza krovnog lima Podgorica" class="main-img" src="images/slike_projekta_16.jpg"/>
+<img alt="Limeni profili visokog kvaliteta" class="main-img" src="images/slike_projekta_17.jpg"/>
+<img alt="Sjecište i obrada limova na mjeru" class="main-img" src="images/slike_projekta_18.jpg"/>
+<img alt="Savremene masine za profilisanje lima" class="main-img" src="images/slike_projekta_19.jpg"/>
+<img alt="Oluci i krovna oprema od lima" class="main-img" src="images/slike_projekta_20.jpg"/>
+<img alt="Steel Art reference krovnih pokrivaca" class="main-img" src="images/slike_projekta_21.jpg"/>
+<button class="nav-btn next-btn" onclick="moveSlide(1)">❯</button>
+</div>
+<div class="thumb-bar" id="thumbBar">
+<img class="thumb active" onclick="currentSlide(0)" src="images/projekat4.jpg"/>
+<img class="thumb" onclick="currentSlide(1)" src="images/projekat1.jpg"/>
+<img class="thumb" onclick="currentSlide(2)" src="images/projekat2.jpg"/>
+<img class="thumb" onclick="currentSlide(3)" src="images/projekat3jpg.jpg"/>
+<img class="thumb" onclick="currentSlide(4)" src="images/slike_projekta_1.jpg"/>
+<img class="thumb" onclick="currentSlide(5)" src="images/slike_projekta_2.jpg"/>
+<img class="thumb" onclick="currentSlide(6)" src="images/slike_projekta_3.jpg"/>
+<img class="thumb" onclick="currentSlide(7)" src="images/slike_projekta_14.jpg"/>
+<img class="thumb" onclick="currentSlide(8)" src="images/slike_projekta_5.jpg"/>
+<img class="thumb" onclick="currentSlide(9)" src="images/slike_projekta_6.jpg"/>
+<img class="thumb" onclick="currentSlide(10)" src="images/slike_projekta_7.jpg"/>
+<img class="thumb" onclick="currentSlide(11)" src="images/slike_projekta_8.jpg"/>
+<img class="thumb" onclick="currentSlide(12)" src="images/slike_projekta_9.jpg"/>
+<img class="thumb" onclick="currentSlide(13)" src="images/slike_projekta_10.jpg"/>
+<img class="thumb" onclick="currentSlide(14)" src="images/slike_projekta_11.jpg"/>
+<img class="thumb" onclick="currentSlide(15)" src="images/slike_projekta_12.jpg"/>
+<img class="thumb" onclick="currentSlide(16)" src="images/slike_projekta_13.jpg"/>
+<img class="thumb" onclick="currentSlide(17)" src="images/slike_projekta_4.jpg"/>
+<img class="thumb" onclick="currentSlide(18)" src="images/slike_projekta_15.jpg"/>
+<img class="thumb" onclick="currentSlide(19)" src="images/slike_projekta_16.jpg"/>
+<img class="thumb" onclick="currentSlide(20)" src="images/slike_projekta_17.jpg"/>
+<img class="thumb" onclick="currentSlide(21)" src="images/slike_projekta_18.jpg"/>
+<img class="thumb" onclick="currentSlide(22)" src="images/slike_projekta_19.jpg"/>
+<img class="thumb" onclick="currentSlide(23)" src="images/slike_projekta_20.jpg"/>
+<img class="thumb" onclick="currentSlide(24)" src="images/slike_projekta_21.jpg"/>
+</div>
+</div>
+<section class="cta-section">
+<div class="cta-content">
+<h2>Sviđa vam se naš rad?</h2>
+<p>Svaki projekat radimo s posebnom pažnjom na detalje. Detaljnije o procesima rada, novim projektima i svakodnevnim aktivnostima možete saznati putem naših društvenih mreža:</p>
+<div class="cta-socials">
+<a class="social-link insta" href="https://www.instagram.com/steelartmne/" target="_blank">
+<i class="fab fa-instagram"></i> Instagram
                   </a>
-                  <a href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" target="_blank" class="social-link fb">
-                      <i class="fab fa-facebook-f"></i> Facebook
+<a class="social-link fb" href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" target="_blank">
+<i class="fab fa-facebook-f"></i> Facebook
                   </a>
-                  <a href="https://wa.me/38267860064" class="social-link wa" target="_blank">
-                      <i class="fab fa-whatsapp"></i> WhatsApp
+<a class="social-link wa" href="https://wa.me/38267860064" target="_blank">
+<i class="fab fa-whatsapp"></i> WhatsApp
                   </a>
-              </div>
-
-              <div class="cta-divider"><span>ILI</span></div>
-
-              <p>Zanima vas specifikacija materijala koje koristimo na ovim objektima?</p>
-              <a href="products" class="cta-products-btn">
+</div>
+<div class="cta-divider"><span>ILI</span></div>
+<p>Zanima vas specifikacija materijala koje koristimo na ovim objektima?</p>
+<a class="cta-products-btn" href="products">
                   Pogledajte ponudu proizvoda <i class="fas fa-arrow-right"></i>
-              </a>
-          </div>
-      </section>
-
-    </div>
-  </div>
+</a>
 </div>
-
+</section>
+</div>
+</div>
+</div>
 <div id="lightbox">
-  <span id="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="Povećana slika" loading="lazy" decoding="async">
+<span id="lightbox-close">×</span>
+<img alt="Povećana slika" id="lightbox-img" src=""/>
 </div>
-
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+<p>© 2026 Steel Art Podgorica. All rights reserved.</p>
+<div style="margin:10px 0; font-size:24px;">
+<a href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" style="color:#f0f0f0; margin:0 10px;" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/steelartmne/" style="color:#f0f0f0; margin:0 10px;" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" style="color:#f0f0f0; margin:0 10px;" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://twitter.com" style="color:#f0f0f0; margin:0 10px;" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+<p>Email: <span style="color: #f0a500;">steelartmne@gmail.com</span> | Phone:<span style="color: #f0a500;">+382 67 860 064</span></p>
+</footer>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <script>
 let currentIdx = 0;
 
@@ -202,19 +502,6 @@ document.addEventListener('keydown', (e) => {
 
 showSlide(0);
 </script>
-</main>
-<section class="seo-content projects-seo"><div class="seo-content__inner"><h2>Reference limenih i metalnih radova</h2><p>Steel Art d.o.o. u projektima prikazuje primjere primjene svojih proizvoda i usluga. Fotografije služe kao pregled različitih tipova limenih profila, krovnih rješenja, građevinske limarije i metalnih konstrukcija. Za svaki konkretan projekat specifikacija zavisi od objekta, dimenzija i zahtjeva kupca.</p><p>Ako planirate novi krov, fasadnu oblogu, nadstrešnicu, pomoćni objekat ili metalnu konstrukciju, možete pogledati reference i zatim otvoriti stranicu <a href="/products">proizvodi</a> da vidite dostupne profile. Za detalje o mjeri, materijalu i isporuci najbolje je poslati upit sa osnovnim podacima o projektu.</p><p>Steel Art je iz Podgorice i organizuje dostavu proizvoda širom Crne Gore. Za pitanja o dostupnosti, rokovima i specifikaciji pozovite <a href="tel:+38267860064">+382 67 860 064</a> ili pošaljite email na <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a>.</p></div></section>
-<p>Reference na stranici nisu samo galerija, već mogu pomoći pri izboru vrste proizvoda i završne obrade. Za detaljnu ponudu, količinu i rok isporuke obratite se Steel Art timu.</p>
-<footer class="footer-simple" role="contentinfo">
-<p>&copy; 2026 Steel Art d.o.o. Podgorica. Sva prava zadržana.</p>
-<div style="margin:18px 0;">
-<a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Facebooku"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/steelartmne/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Instagramu"><i class="fab fa-instagram"></i></a>
-<a href="https://wa.me/38267860064" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kontaktirajte Steel Art putem WhatsApp-a"><i class="fab fa-whatsapp"></i></a>
-</div>
-<p>Email: <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a> &nbsp;|&nbsp; Telefon: <a href="tel:+38267860064">+382 67 860 064</a></p>
-<p>Podgorica, Crna Gora · Dostava širom Crne Gore</p>
-</footer>
-<script src="/app.js" defer></script>
+<script src="app.js"></script>
 </body>
 </html>

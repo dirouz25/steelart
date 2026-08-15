@@ -1,105 +1,387 @@
 <!DOCTYPE html>
-<html lang="sr-Latn-ME">
+
+<html lang="sr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="description" content="Saznajte više o Steel Art d.o.o. iz Podgorice, firmi specijalizovanoj za obradu i profilisanje lima, limene profile i metalne konstrukcije.">
-<meta name="author" content="Steel Art d.o.o.">
-<meta name="theme-color" content="#1a1f36">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<link href="https://steel-art.me/about" rel="canonical"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>O nama | Steel Art d.o.o. Podgorica</title>
-<link rel="canonical" href="https://steel-art.me/about">
-<link rel="icon" type="image/png" href="/images/favicon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="image" href="https://steel-art.me/images/steel-art-hero.webp" fetchpriority="high">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="sr_ME">
-<meta property="og:site_name" content="Steel Art d.o.o.">
-<meta property="og:title" content="O nama | Steel Art d.o.o. Podgorica">
-<meta property="og:description" content="Saznajte više o Steel Art d.o.o. iz Podgorice, firmi specijalizovanoj za obradu i profilisanje lima, limene profile i metalne konstrukcije.">
-<meta property="og:url" content="https://steel-art.me/about">
-<meta property="og:image" content="https://steel-art.me/images/steel-art-og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="O nama | Steel Art d.o.o. Podgorica">
-<meta name="twitter:description" content="Saznajte više o Steel Art d.o.o. iz Podgorice, firmi specijalizovanoj za obradu i profilisanje lima, limene profile i metalne konstrukcije.">
-<meta name="twitter:image" content="https://steel-art.me/images/steel-art-og.jpg">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#organization","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":{"@type":"ImageObject","url":"https://steel-art.me/images/logo%20finalni.png"},"image":"https://steel-art.me/images/steel-art-hero.webp","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Crna Gora"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i pruža usluge obrade lima i izrade metalnih konstrukcija, uz dostavu širom Crne Gore."},{"@type":"AboutPage","@id":"https://steel-art.me/about#webpage","url":"https://steel-art.me/about","name":"O nama | Steel Art d.o.o. Podgorica","description":"Saznajte više o Steel Art d.o.o. iz Podgorice, firmi specijalizovanoj za obradu i profilisanje lima, limene profile i metalne konstrukcije.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#organization"},"inLanguage":"sr-Latn-ME"},{"@type":"BreadcrumbList","@id":"https://steel-art.me/about#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://steel-art.me/"},{"@type":"ListItem","position":2,"name":"O nama","item":"https://steel-art.me/about"}]}]}</script>
-</head>
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navbar ostaje tvoj originalni stil */
+
+.shiny-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #f0a500;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.shiny-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(240,165,0,0.6);
+}
+
+/* Shine efekt */
+.shiny-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0.0), rgba(255,255,255,0.4));
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.shiny-button:hover::after {
+  left: 125%;
+  transition: all 0.7s ease-in-out;
+}
+
+.mission-vision-values > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-vision-values > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(240,165,0,0.5);
+}
+
+/* Hero sekcija */
+.hero-about {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #2a2f4a 0%, #3b4166 60%, #5c3b1c 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Grid unutar hero */
+.hero-about .about-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Tekst i slika */
+.hero-about .hero-text {
+  flex: 1 1 500px;
+}
+
+.hero-about .hero-image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.hero-about .hero-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+/* Mission-Vision-Values */
+
+
+.mission-vision-values {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Tablet i manji ekrani */
+@media (max-width: 768px) {
+    .hero-about {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .hero-about .about-grid {
+        gap: 30px;
+    }
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .shiny-button { padding: 10px 20px; font-size: 0.9rem; }
+    .mission-vision-values { gap: 25px; }
+}
+
+/* Mobilni ekrani */
+@media (max-width: 480px) {
+    .hero-about {
+        padding: 30px 15px;
+    }
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+    .shiny-button { padding: 8px 18px; font-size: 0.85rem; }
+    .mission-vision-values { gap: 20px; }
+}
+
+/* Animacije */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.hero-about .hero-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animacija prelaska */
+}
+
+/* Efekat pri hoveru */
+.hero-about .hero-image img:hover {
+  transform: scale(1.05); /* lagano povećanje */
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* jača sjena */
+}
+.mvv-block {
+  background: #454d7e; /* ista boja kao u about sekciji */
+  border-radius: 12px;
+  border: 1px solid rgba(240,165,0,0.6); /* zlatna linija */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  padding: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mvv-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* zlatni glow */
+}
+
+.mvv-block h2 {
+  color: #f0a500;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.mvv-block p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.mission-vision-values {
+  background: #252a48; /* tamno-plava / ljubičasto-plava, razlika od footera */
+  color: #fff;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: center;
+  border-radius: 16px; /* dodaje zaobljene rubove cijeloj sekciji */
+  
+
+}
+
+.mission-vision-values .mvv-block {
+  background: linear-gradient(135deg, #2c2c2c, #3b3b55);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  padding: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mission-vision-values .mvv-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(240,165,0,0.6); /* lagani zlatni glow */
+}
+
+.mission-vision-values h2 {
+  color: #f0a500; /* zlatni naglasak */
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.mission-vision-values p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Tablet ekrani */
+@media (max-width: 768px) {
+  .mission-vision-values {
+    padding: 60px 15px;
+    gap: 25px;
+  }
+  .mvv-block {
+    padding: 20px;
+  }
+  .mission-vision-values h2 {
+    font-size: 1.5rem;
+  }
+  .mission-vision-values p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobilni ekrani */
+@media (max-width: 480px) {
+  .mission-vision-values {
+    padding: 40px 10px;
+    gap: 20px;
+  }
+  .mvv-block {
+    padding: 15px;
+  }
+  .mission-vision-values h2 {
+    font-size: 1.3rem;
+  }
+  .mission-vision-values p {
+    font-size: 0.9rem;
+  }
+}
+
+body{
+    background: #252a48; /* nova boja sekcije */
+
+}
+  </style>
+<meta content="Saznajte više o Steel Art d.o.o. iz Podgorice, proizvodnji profilisanih limova, obradi lima i izradi metalnih konstrukcija za kupce širom Crne Gore." name="description"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/><meta content="Steel Art d.o.o." name="author"/><meta content="#1f2540" name="theme-color"/><link href="https://steel-art.me/about" rel="canonical"/><meta content="website" property="og:type"/><meta content="sr_ME" property="og:locale"/><meta content="Steel Art d.o.o." property="og:site_name"/><meta content="O nama | Steel Art d.o.o. Podgorica" property="og:title"/><meta content="Saznajte više o Steel Art d.o.o. iz Podgorice, proizvodnji profilisanih limova, obradi lima i izradi metalnih konstrukcija za kupce širom Crne Gore." property="og:description"/><meta content="https://steel-art.me/about" property="og:url"/><meta content="https://steel-art.me/images/logo%20finalni.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="O nama | Steel Art d.o.o. Podgorica" name="twitter:title"/><meta content="Saznajte više o Steel Art d.o.o. iz Podgorice, proizvodnji profilisanih limova, obradi lima i izradi metalnih konstrukcija za kupce širom Crne Gore." name="twitter:description"/><meta content="https://steel-art.me/images/logo%20finalni.png" name="twitter:image"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://steel-art.me/#localbusiness","name":"Steel Art d.o.o.","url":"https://steel-art.me/","telephone":"+382 67 860 064","email":"steelartmne@gmail.com","logo":"https://steel-art.me/images/logo%20finalni.png","address":{"@type":"PostalAddress","streetAddress":"Ulica Vojvode Mijajla Nišina br 30","addressLocality":"Podgorica","addressCountry":"ME"},"areaServed":{"@type":"Country","name":"Montenegro"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/share/1B39UktB8E/","https://www.instagram.com/steelartmne/"],"description":"Steel Art d.o.o. iz Podgorice proizvodi profilisane limove i izrađuje metalne konstrukcije, uz dostavu širom Crne Gore."},{"@type":"WebSite","@id":"https://steel-art.me/#website","url":"https://steel-art.me/","name":"Steel Art d.o.o.","publisher":{"@id":"https://steel-art.me/#localbusiness"},"inLanguage":"sr-Latn-ME"},{"@type":"WebPage","@id":"https://steel-art.me/about#webpage","url":"https://steel-art.me/about","name":"O nama | Steel Art d.o.o. Podgorica","description":"Saznajte više o Steel Art d.o.o. iz Podgorice, proizvodnji profilisanih limova, obradi lima i izradi metalnih konstrukcija za kupce širom Crne Gore.","isPartOf":{"@id":"https://steel-art.me/#website"},"about":{"@id":"https://steel-art.me/#localbusiness"},"inLanguage":"sr-Latn-ME"}]}</script></head>
 <body>
-
 <!-- Navbar -->
-<nav class="navbar" aria-label="Glavna navigacija">
+<nav class="navbar">
 <div class="navbar__container">
-<a href="/" id="navbar__logo" aria-label="Steel Art d.o.o. – Početna"><img src="/images/logo finalni.png" width="110" height="60" alt="Steel Art d.o.o. Podgorica" decoding="async" loading="lazy"></a>
-<div class="navbar__toggle" id="mobile-menu" aria-label="Otvori meni" role="button" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+<a href="index" id="navbar__logo">
+<img alt="" height="60px" src="images/logo finalni.png" width="110px"/>
+</a>
+<div class="navbar__toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
 <ul class="navbar__menu">
-<li class="navbar__item"><a href="/" class="navbar__links">Početna</a></li>
-<li class="navbar__item"><a href="/projects" class="navbar__links">Projekti</a></li>
-<li class="navbar__item"><a href="/products" class="navbar__links">Proizvodi</a></li>
-<li class="navbar__item"><a href="/contacts" class="navbar__links">Kontakt</a></li>
-<li class="navbar__item"><a href="/about" class="navbar__links">O nama</a></li>
-<li class="navbar__item"><a href="/help" class="navbar__links">Česta pitanja</a></li>
-</ul></div></nav>
-<main>
-
-
+<li class="navbar__item"><a class="navbar__links" href="index">Home</a></li>
+<li class="navbar__item"><a class="navbar__links" href="projects">Projects</a></li>
+<li class="navbar__item"><a class="navbar__links" href="products">Products</a></li>
+<li class="navbar__item"><a class="navbar__links" href="contacts">Contacts</a></li>
+<li class="navbar__item"><a class="navbar__links" href="about">About</a></li>
+<li class="navbar__item"><a class="navbar__links" href="help">Help</a></li>
+</ul>
+</div>
+</nav>
 <!-- Hero About Section -->
 <section class="hero-about">
-  <div class="about-grid">
-    <!-- Text content -->
-    <div class="hero-text" style="animation: fadeInUp 1s ease;">
-      <h1 style="font-size: 3rem; margin-bottom: 20px; color: #f0a500; font-weight: bold;">O nama – Steel Art d.o.o. Podgorica</h1>
-      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;"><strong>Steel Art d.o.o.</strong> je firma sa sjedištem u Podgorici koja se bavi profilisanjem i obradom lima, prodajom limenih proizvoda i izradom metalnih konstrukcija. Naš fokus je na praktičnim rješenjima za krovove, fasade, završne obloge i druge građevinske potrebe.</p>
-      <p style="font-size: 1.1rem; line-height: 1.8;">Kupcima nudimo direktan kontakt, jasnu komunikaciju o proizvodima i mogućnost dogovora oko mjere i zahtjeva projekta. U ponudi su trapezni lim, limene oblice i poluoblice, lambda lim, limena daska i metalne konstrukcije. Proizvode možemo isporučiti u Podgorici i širom Crne Gore.</p>
-      <a href="projects" class="shiny-button">Pogledaj projekte</a>
-    </div>
-
-    <!-- Image -->
-    <div class="hero-image" style="animation: fadeIn 1.2s ease;">
-      <img src="/images/logo_crni.webp" alt="Steel Art Factory" loading="lazy" decoding="async">
-    </div>
-  </div>
+<div class="about-grid">
+<!-- Text content -->
+<div class="hero-text" style="animation: fadeInUp 1s ease;">
+<h1 style="font-size: 3rem; margin-bottom: 20px; color: #f0a500; font-weight: bold;">About Us</h1>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+<strong>Steel Art</strong> je moderna fabrika specijalizovana za 
+        <span style="color:#f0a500;">obradu i profilaciju lima</span>. Naš tim kombinuje 
+        dugogodišnje iskustvo sa najnovijim tehnologijama kako bismo pružili vrhunski kvalitet.
+      </p>
+<p style="font-size: 1.1rem; line-height: 1.8;">
+        Fokusirani smo na <strong>inovacije</strong>, <strong>preciznost</strong> i 
+        <strong>zadovoljstvo klijenata</strong>. Naša misija je stvaranje dugoročnih 
+        partnerstava kroz pouzdanost i kvalitet.
+      </p>
+<a class="shiny-button" href="projects">Pogledaj projekte</a>
+</div>
+<!-- Image -->
+<div class="hero-image" style="animation: fadeIn 1.2s ease;">
+<img alt="Steel Art Factory" src="images/logo_crni.jpg"/>
+</div>
+</div>
 </section>
-
 <!-- Mission-Vision-Values Section -->
 <section class="mission-vision-values">
-  <div class="mvv-block">
-    <h2>Naša Misija</h2>
-    <p>Pružiti pouzdana rješenja u oblasti profilisanja i obrade lima, uz proizvode i usluge prilagođene stvarnim potrebama kupca i projekta.</p>
-  </div>
-
-  <div class="mvv-block">
-    <h2>Naša Vizija</h2>
-    <p>Razvijati Steel Art kao pouzdanog partnera za limene proizvode, obradu lima i metalne konstrukcije u Crnoj Gori.</p>
-  </div>
-
-  <div class="mvv-block">
-    <h2>Naše Vrijednosti</h2>
-    <p>Kvalitet proizvoda, preciznost, pouzdanost, dostupna komunikacija i dugoročna saradnja sa kupcima su temelj našeg rada.</p>
-  </div>
-</section>
-
-<!-- Font Awesome CDN -->
-
-
-</main>
-<section class="seo-content about-seo"><div class="seo-content__inner"><h2>Steel Art u Podgorici</h2><p>Naš rad je usmjeren na limene proizvode i građevinska rješenja koja se mogu prilagoditi konkretnom objektu. U ponudi su trapezni lim, limena daska, oblice i poluoblice, lambda lim, kao i metalne konstrukcije. Pored proizvoda, pružamo usluge obrade lima kada je potrebno sječenje ili savijanje prema dogovorenoj mjeri.</p><p>Važan dio našeg pristupa je direktna komunikacija sa kupcem. Prije naručivanja možete dostaviti dimenzije, količinu ili nacrt, a naš tim može sa vama proći kroz zahtjev i dogovoriti naredne korake. Na taj način informacije o proizvodu i isporuci ostaju jasne od početka do realizacije.</p><p>Steel Art d.o.o. posluje iz Podgorice i svoje proizvode može isporučiti kupcima širom Crne Gore. Ako želite da provjerite dostupnost određenog profila ili da pošaljete upit za metalnu konstrukciju, koristite <a href="/contacts">kontakt stranicu</a> ili nas pozovite direktno.</p></div></section>
-<footer class="footer-simple" role="contentinfo">
-<p>&copy; 2026 Steel Art d.o.o. Podgorica. Sva prava zadržana.</p>
-<div style="margin:18px 0;">
-<a href="https://www.facebook.com/share/1B39UktB8E/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Facebooku"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/steelartmne/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Steel Art na Instagramu"><i class="fab fa-instagram"></i></a>
-<a href="https://wa.me/38267860064" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Kontaktirajte Steel Art putem WhatsApp-a"><i class="fab fa-whatsapp"></i></a>
+<div class="mvv-block">
+<h2>Naša Misija</h2>
+<p>Pružiti inovativna i kvalitetna rešenja u oblasti obrade lima, prilagođena potrebama naših klijenata.</p>
 </div>
-<p>Email: <a href="mailto:steelartmne@gmail.com">steelartmne@gmail.com</a> &nbsp;|&nbsp; Telefon: <a href="tel:+38267860064">+382 67 860 064</a></p>
-<p>Podgorica, Crna Gora · Dostava širom Crne Gore</p>
+<div class="mvv-block">
+<h2>Naša Vizija</h2>
+<p>Postati lider u industriji prerade lima na regionalnom i evropskom tržištu, kroz inovacije i kvalitet.</p>
+</div>
+<div class="mvv-block">
+<h2>Naše Vrijednosti</h2>
+<p>Kvalitet, povjerenje, pouzdanost i dugoročna partnerstva su temelj našeg rada.</p>
+</div>
+</section>
+<footer style="background: #1f2540;color: #f0f0f0; padding:20px 10px; text-align:center; font-family:Arial, sans-serif;">
+<p>© 2022 Steel Art. All rights reserved.</p>
+<div style="margin:10px 0; font-size:24px;">
+<a class="social-icon" href="https://www.facebook.com/share/1B39UktB8E/?mibextid=wwXIfr" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a class="social-icon" href="https://www.instagram.com/steelartmne/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+<a class="social-icon" href="https://linkedin.com" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+<a class="social-icon" href="https://twitter.com" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+</div>
+<p>Email: <span style="color: #f0a500;">steelartmne@gmail.com</span> | Phone:<span style="color: #f0a500;">+382 67 860 064</span></p>
 </footer>
-<script src="/app.js" defer></script>
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalText = document.getElementById("modalText");
+
+function openModal(imageSrc, description) {
+    modal.classList.add("show");
+    modalImg.src = imageSrc;
+    modalText.textContent = description;
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(event) {
+    if(event.target === modal) {
+        closeModal();
+    }
+});
+</script>
+<script src="app.js"></script>
 </body>
 </html>
