@@ -1,9 +1,33 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://steel-art.me/</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://steel-art.me/products</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://steel-art.me/projects</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://steel-art.me/contacts</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://steel-art.me/about</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://steel-art.me/help</loc><lastmod>2026-08-15</lastmod></url>
+
+  <url>
+    <loc>https://steel-art.me/</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/products</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/projects</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/contacts</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/about</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/help</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/trapezni-lim</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/obrada-lima</loc>
+  </url>
+  <url>
+    <loc>https://steel-art.me/metalne-konstrukcije</loc>
+  </url>
+
 </urlset>
